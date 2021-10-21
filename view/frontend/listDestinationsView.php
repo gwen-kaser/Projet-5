@@ -1,11 +1,11 @@
 <?php $title = 'Nuit insolite/accueil'; ?>
 
     <!--Accueil-->
-    <div class="img" style="background: url(Images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;" alt="Paysage insolite;">
+    <div class="img" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;" alt="Paysage insolite;">
         <div class="logo text-center py-5">
-            <img class="img-fluid" src="Images/logo.png" alt>
+            <img class="img-fluid" src="public/images/logo.png" alt>
         </div>
-    </div>
+    </div>  
 
     <!--Destinations-->
     <div class="container mt-4">
@@ -20,7 +20,7 @@
         
         <div class="row mb-5">
             <div class="col-md-4 offset-md-2">
-                <img class="img-fluid" src="Images/borabora-pilotis-palace-1.jpg" alt>
+                <img class="img-fluid" src="public/images/borabora-pilotis-palace-1.jpg" alt>
             </div>
             <div class="col-md-5">
                 <div class="text-block">
