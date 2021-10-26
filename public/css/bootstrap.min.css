@@ -1,53 +1,23 @@
-/* Navbar */
-
-.navbar {
-    background-color: rgb(255, 255, 255, 0);
-}
-
-/* Home */
-
-h2, h3, a, button {
-    font-weight: 100;
-}
+/* Accueil */
 
 .logo {
-    background-color:rgba(255,255,255,0.4);
     position: absolute;
-    margin: 0;
-    top: 50%;
+    top: 65%;
     left: 20%;
     transform: translate(0%, -50%);
     width: 60%; 
 }
 
-hr {
-    border-top: 3px double black;
-    text-align: center;
-    height: 5px;
-    width: 50%;
-}
-
 /* Destinations */
 
-.jumbotron {
-    background-color: white;
-}
-
-button {
-    font-style: italic;
-    font-size: 12px;
-    background-color: white;
-}
-
 button:hover { 
-    border: 3px double black;
+    border: 1px double black;
 }
 
 
 /* Footer */
 
-footer {
-    border-top: 4px double black;
+a {
+    font-size: 0.7em;
 }
-
 

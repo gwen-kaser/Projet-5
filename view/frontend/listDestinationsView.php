@@ -1,22 +1,16 @@
-<?php $title = 'Nuit insolite/accueil'; ?>
+<?php $title = 'Nuits insolites/accueil'; ?>
+
+<?php ob_start(); ?>
 
     <!--Accueil-->
-    <div class="img" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;" alt="Paysage insolite;">
+    <div class="img mb-5" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;" alt="Paysage insolite;">
         <div class="logo text-center py-5">
-            <img class="img-fluid" src="public/images/logo.png" alt>
+            <img class="img-fluid mb-5" src="public/images/logo.png" alt>
         </div>
     </div>  
 
     <!--Destinations-->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col">
-                <div class="jumbotron text-center">
-                    <h2>Choisissez la destination de vos rêves<br/>
-                        pour une nuit que vous n'êtes pas prêt d'oublier !</h2>
-                </div>
-            </div>
-        </div>
+    <div class="container py-5">
         
         <div class="row mb-5">
             <div class="col-md-4 offset-md-2">
@@ -24,12 +18,15 @@
             </div>
             <div class="col-md-5">
                 <div class="text-block">
-                    <h3>BORABORA, Pilotis Palace</h3>
+                    <h4>BORABORA, PILOTIS PALACE</h4>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis laudantium at debitis veniam recusandae ipsam saepe fugit qui!</p>
-                    <button type="submit">Découvrir</button>
+                    <a href="#"><i class="fal fa-arrow-circle-right fa-2x"></i></a>
                 </div>
             </div>
-          </div>
-          <hr>
+        </div>
+    </div>
+    <span class="border-top"></span>
+
+<?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
