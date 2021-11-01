@@ -27,8 +27,14 @@
             </a>
             <ul class="navbar-nav me-auto"></ul>
             
-            <a class="nav-link text-light" href="#">S'inscrire</a> |
-            <a class="nav-link text-light" href="#">Se connecter</a> 
+            <!-- Condition si un membre se connecte -->
+            <?php if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {?>
+                Bonjour <?= ucwords($_SESSION['pseudo']);?>
+                <a class="nav-link text-light" href="index.php?action=deconnexion">Se deconnecter</a>
+            <?php } else { ?>
+                <a class="nav-link text-light" href="index.php?action=registrationView">S'inscrire</a> |
+                <a class="nav-link text-light" href="index.php?action=connexionView">Se connecter</a>
+            <?php }?>
         </div>
     </nav>
     
@@ -36,10 +42,6 @@
     <?= $content ?>
 
     <!--Footer-->
-    <div class="text-center py-5">  
-        <a href="index.php?action=contact" class="btn btn-sm border border-primary active" role="button" aria-pressed="true">NOUS CONTACTER</a>
-    </div>
-
     <div class="footer mt-5 border text-dark bg-primary">
         <div class="row py-5 text-center">
             <div class="col">
@@ -49,7 +51,7 @@
             </div>
         </div>
         <div class="link text-center py-1 bg-light">
-            <a class="text-dark" href="#">Paramètres des cookies</a> | <a class="text-dark" href="#">Politique de confidentialité et utilisation des cookies</a> | <a class="text-dark" href="#">Mention légale</a>
+            <a class="text-dark" href="#">PARAMÈTRES DES COOKIES</a> | <a class="text-dark" href="#">POLITIQUE DE CONFIDENTIALITÉ ET UTILISATION DES COOKIES</a> | <a class="text-dark" href="#">MENTION LÉGALE</a>
         </div>
     </div>
 
