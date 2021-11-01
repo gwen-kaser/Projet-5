@@ -11,7 +11,6 @@
 
     <!--Destinations-->
     <div class="container py-5">
-        
         <div class="row mb-5">
             <div class="col-md-4 offset-md-2">
                 <img class="img-fluid" src="public/images/borabora-pilotis-palace-1.jpg" alt>
@@ -25,7 +24,10 @@
             </div>
         </div>
     </div>
-    <span class="border-top"></span>
+    
+    <div class="text-center py-5">  
+        <a href="index.php?action=contact" class="btn btn-sm border border-primary active" role="button" aria-pressed="true">NOUS CONTACTER</a>
+    </div>
 
 <?php $content = ob_get_clean(); ?>
 

@@ -1,5 +1,9 @@
 /* Accueil */
 
+a {
+    font-size: 10px;
+}
+
 .logo {
     position: absolute;
     top: 65%;
@@ -10,14 +14,50 @@
 
 /* Destinations */
 
-button:hover { 
-    border: 1px double black;
+.fal:hover {
+    font-size: 23px;
 }
 
-
-/* Footer */
-
-a {
-    font-size: 0.7em;
+.text-block {
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
 }
 
+/* Connexion + Inscription */
+
+.form-group {
+	position:relative;
+	margin-bottom:25px;
+}
+
+.form-group label {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: 13px;
+	color: black;	
+    pointer-event: none;
+	transition: all 0.5s ease-in-out;
+}
+
+.form-group input { 
+  border: 0;
+  border-bottom: 1px solid #555;  
+  background: transparent;
+  width: 100%;
+  padding: 8px 0 5px 0;
+  font-size: 13px;
+  color: black;
+}
+
+.form-group input:focus { 
+ border: none;	
+ outline: none;
+ border-bottom: 2px solid black;	
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+	top: -12px;
+	font-size: 13px;
+}
