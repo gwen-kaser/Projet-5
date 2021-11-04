@@ -7,13 +7,20 @@ require('controller/Member.php');
 
 try {
     if (isset($_GET['action'])) {
-        
+        // Page d'accueil
         if ($_GET['action'] == 'home') {
             $website = new Website();
             $website->home();
-        } 
-
-        // Membres - Connexion
+        }
+        
+        // Page destination
+        if ($_GET['action'] == 'destination') {
+            $website = new Website();
+            $website->destination();
+        }
+        
+        // Espace membres
+        // Connexion
         if ($_GET['action'] == 'connexionView') {
             $member = new Member();
             $member->connexionView();
@@ -29,7 +36,7 @@ try {
                 }
             }
         
-        // Member - Inscription
+        // Inscription
         if ($_GET['action'] == 'registrationView') {
             $member = new Member();
             $member->registrationView();
@@ -44,7 +51,8 @@ try {
                 throw new Exception('Tous les champs ne sont pas remplis !');
             }
         }
-
+        
+        // Déconnection
         elseif ($_GET['action'] == 'deconnexion') {
             $member = new Member();
             $member->deconnexion();
