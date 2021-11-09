@@ -29,11 +29,12 @@
             
             <!-- Condition si un membre se connecte -->
             <?php if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {?>
-                Bonjour <?= ucwords($_SESSION['pseudo']);?>
-                <a class="nav-link text-light" href="index.php?action=deconnexion">Se deconnecter</a>
+                Bonjour <?=($_SESSION['pseudo']);?>
+                <a class="nav-link text-light" href="index.php?action=deconnexion">SE DECONNECTER</a>
             <?php } else { ?>
-                <a class="nav-link text-light" href="index.php?action=registrationView">S'inscrire</a> |
-                <a class="nav-link text-light" href="index.php?action=connexionView">Se connecter</a>
+                <a class="nav-link text-light" href="index.php?action=registrationView">S'INSCRIRE</a> |
+                <a class="nav-link text-light" href="index.php?action=connexionView">SE CONNECTER</a> |
+                <a class="nav-link text-light" href="index.php?action=contact">NOUS CONTACTER</a>
             <?php }?>
         </div>
     </nav>
@@ -42,8 +43,8 @@
     <?= $content ?>
 
     <!--Footer-->
-    <div class="footer mt-5 border text-dark bg-primary">
-        <div class="row py-5 text-center">
+    <div class="footer border text-dark bg-primary mt-5">
+        <div class="row py-4 text-center">
             <div class="col">
                 <a href=""><i class="fab fa-facebook-f fa-lg text-light mr-5 fa-2x"></i></a>
                 <a href=""><i class="fab fa-twitter fa-lg text-light mr-5 fa-2x"></i></a>

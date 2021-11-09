@@ -7,12 +7,12 @@
     <div class="container">
         <div class="row mt-5 justify-content-center text-primary">
             <div class="col-12 col-md-6 col-lg-4 py-5">
-                <h3 class="pb-4">INSCRIPTION</h3>
+                <h3 class="pb-4 font-weight-light">INSCRIPTION</h3>
                 
                 <form action="index.php?action=saveUser" method="post">
                     <div class="form-group">
                         <input type="text" id="pseudo" name="pseudo" required="">
-                        <label for="pseudo">PSEUDO</label><br/>
+                        <label for="pseudo">NOM UTILISATEUR</label><br/>
                     </div>
                     <div class="form-group">
                         <input type="password" id="pass" name="pass" required="">
@@ -28,7 +28,7 @@
                         <label for="email">EMAIL</label><br/>
                         <div class="font-italic"><?php echo $errorEmail ?? "";?></div>
                     </div>
-                    <button type="submit" class="btn-primary btn-sm">CONFIRMER</button>
+                    <button type="submit" class="btn-sm border border-primary">CONFIRMER</button>
                 </form>
             </div>
         </div>
