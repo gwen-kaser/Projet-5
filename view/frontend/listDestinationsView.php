@@ -17,16 +17,17 @@
             </div>
             <div class="col-md-5">
                 <div class="text-block">
-                    <h4>BORABORA, PILOTIS PALACE</h4>
+                    <h4 class="font-weight-light">BORABORA, PILOTIS PALACE</h4>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis laudantium at debitis veniam recusandae ipsam saepe fugit qui!</p>
-                    <a href="#"><i class="fal fa-arrow-circle-right fa-2x"></i></a>
+                    <a href="index.php?action=destination"><i class="fal fa-arrow-circle-right fa-2x"></i></a>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <div class="text-center py-5">  
-        <a href="index.php?action=contact" class="btn btn-sm border border-primary active" role="button" aria-pressed="true">NOUS CONTACTER</a>
+        <a href="index.php?action=contact" class="btn btn-sm border border-primary active" role="button" aria-pressed="true">NOUS CONTACTER</a><br><br>
+        <a href="index.php?action=addDestinationView" class="btn btn-sm border border-primary active" role="button" aria-pressed="true">Ajouter une destination</a>
     </div>
 
 <?php $content = ob_get_clean(); ?>
