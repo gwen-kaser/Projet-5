@@ -4,6 +4,7 @@ session_start();
 
 require('controller/Website.php');
 require('controller/Member.php');
+require('controller/Admin.php');
 
 try {
     if (isset($_GET['action'])) {
@@ -17,6 +18,31 @@ try {
         if ($_GET['action'] == 'destination') {
             $website = new Website();
             $website->destination();
+        }
+
+        //Espace admin
+        // Page gestion des destination
+        if ($_GET['action'] == 'listDestinationsAdminView') {
+            $admin = new Admin();
+            $admin->listDestinationsAdminView();
+        }
+
+        // Page d'ajout d'une destination
+        if ($_GET['action'] == 'addDestinationView') {
+            $admin = new Admin();
+            $admin->addDestinationView();
+        }
+
+        // L'ajout d'une nouvelle destination
+        // Vérification qu'il y a une connection + champs remplis
+        elseif ($_GET['action'] == 'addDestination') {
+            if (!empty($_SESSION['id']) && !empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['image']) && !empty($_POST['image_home']) && !empty($_POST['latitude']) && !empty($_POST['longitude'])) {
+                $admin = new Admin();
+                $admin->addDestination($_SESSION['id'], $_POST['title'], $_POST['content'], $_POST['image'], $_POST['image_home'], $_POST['latitude'], $_POST['longitude']);
+            }
+            else {
+                throw new Exception('Tous les champs ne sont pas remplis !');
+            }
         }
         
         // Espace membres
@@ -63,7 +89,7 @@ try {
     else {
         $website = new Website();
         $website->home();   
-        }
+    }
 }
 catch(Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
