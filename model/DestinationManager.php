@@ -14,11 +14,11 @@ class DestinationManager extends Manager
         return $db->lastInsertId();
     }
 
-    public function addImage($image, $image_home, $destination_id)
+    public function addImage($image_slider, $image_home, $destination_id)
     {
         $db = $this->dbConnect();
-        $destinations = $db->prepare('INSERT INTO images_slider(image, image_home, destination_id) VALUES(?, ?, ?)');
-        $destinations->execute(array($image, $image_home, $destination_id));
+        $destinations = $db->prepare('INSERT INTO images(image_slider, image_home, destination_id) VALUES(?, ?, ?)');
+        $destinations->execute(array($image_slider, 1, $destination_id));
         
         return $db->lastInsertId();
 
