@@ -19,7 +19,7 @@
                         <label for="pass">MOT DE PASSE</label><br/>
                         <div class="font-italic"><?php echo $errorPassword ?? "";?></div>
                     </div>
-                    <button type="submit" class="btn-sm border border-primary">CONNEXION</button><br/><br/>
+                    <button type="submit" class="btn-primary btn-sm">CONNEXION</button><br/><br/>
                     <a class="font-italic" href="index.php?action=registrationView">VOUS SOUHAITEZ VOUS INSCRIRE ?</a>
                 </form>
             </div>

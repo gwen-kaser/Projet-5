@@ -28,7 +28,7 @@
                         <label for="email">EMAIL</label><br/>
                         <div class="font-italic"><?php echo $errorEmail ?? "";?></div>
                     </div>
-                    <button type="submit" class="btn-sm border border-primary">CONFIRMER</button>
+                    <button type="submit" class="btn-primary btn-sm">CONFIRMER</button>
                 </form>
             </div>
         </div>
