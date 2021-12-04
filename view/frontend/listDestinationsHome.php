@@ -5,7 +5,7 @@
     <!--Accueil-->
     <div class="img mb-5" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;" alt="Paysage insolite;">
         <div class="logo text-center py-5">
-            <img class="img-fluid mb-5" src="public/images/logo.png" alt>
+            <img class="img-fluid mb-5" src="public/images/logo.png" alt="logo">
         </div>
     </div>  
 
@@ -13,7 +13,7 @@
     <div class="container py-5">
         <div class="row mb-5">
             <div class="col-md-4 offset-md-2">
-                <img class="img-fluid" src="public/images/borabora-pilotis-palace-1.jpg" alt>
+                <img class="img-fluid" src="public/images/bahamas-under-the-sea-hotel-1.jpg" alt>
             </div>
             <div class="col-md-5">
                 <div class="text-block">
@@ -23,12 +23,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="text-center py-5">  
-        <a href="index.php?action=contact" class="btn btn-sm border border-primary active" role="button" aria-pressed="true">NOUS CONTACTER</a><br><br>
-        <a href="index.php?action=addDestinationView" class="btn btn-sm border border-primary active" role="button" aria-pressed="true">Ajouter une destination</a>
-    </div>
+    </div>   
 
 <?php $content = ob_get_clean(); ?>
 

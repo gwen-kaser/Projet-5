@@ -18,7 +18,7 @@ class Admin {
     {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse ajouter une destination
 
-            require('view/frontend/addDestinationView.php');
+            require('view/frontend/addDestination.php');
         }
     }
 
