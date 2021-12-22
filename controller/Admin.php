@@ -54,25 +54,29 @@ class Admin {
                 }
             }
             
-            // Vérification de l'image du slider
-            if (isset($_FILES['image_slider']) && $_FILES['image_slider']['error'] == 0) {
-                
-                // La taille du fichier
-                if ($_FILES['image_slider']['size'] <= 1000000) {
+            // Boucle pour enregistrer plusieurs images
+            foreach($_FILES as $file) {
+
+                // Vérification de l'image du slider
+                if (isset($_FILES['image_slider']) && $_FILES['image_slider']['error'] == 0) {
                     
-                    // L'autorisation de l'extension
-                    $fileInfo = pathinfo($_FILES['image_slider']['name']);
-                    $extension = $fileInfo['extension'];
-                    $allowedExtension = ['jpg', 'jpeg', 'gif', 'png'];
+                    // La taille du fichier
+                    if ($_FILES['image_slider']['size'] <= 1000000) {
+                        
+                        // L'autorisation de l'extension
+                        $fileInfo = pathinfo($_FILES['image_slider']['name']);
+                        $extension = $fileInfo['extension'];
+                        $allowedExtension = ['jpg', 'jpeg', 'gif', 'png'];
 
-                    if (in_array($extension, $allowedExtension)) {
+                        if (in_array($extension, $allowedExtension)) {
 
-                        // Validation et stockage du fichier 
-                        move_uploaded_file($_FILES['image_slider']['tmp_name'], 'uploads/' .
-                        basename($_FILES['image_slider']['name']));
+                            // Validation et stockage du fichier 
+                            move_uploaded_file($_FILES['image_slider']['tmp_name'], 'uploads/' .
+                            basename($_FILES['image_slider']['name']));
 
-                        // Enregistrement dans la bdd
-                        $destinationManager->addImage($image_slider['name'], $image_home['name'], $id);
+                            // Enregistrement dans la bdd
+                            $destinationManager->addImage($image_slider['name'], $image_home['name'], $id);
+                        }
                     }
                 }
             }
