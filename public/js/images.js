@@ -16,7 +16,7 @@ class Images {
         icon.classList.add("fal");
         icon.classList.add("fa-backspace");
         line.setAttribute("type","file",);
-        line.setAttribute("name","image_slider");
+        line.setAttribute("name","image_slider[]");
         // Supprimer input avec l'icon
         icon.addEventListener("click", () => {
             div.remove();

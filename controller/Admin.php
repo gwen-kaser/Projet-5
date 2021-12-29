@@ -49,33 +49,33 @@ class Admin {
                         basename($_FILES['image_home']['name']));
                         
                         // Enregistrement dans la bdd
-                        $destinationManager->addImage($image_slider['name'], $image_home['name'], $id);
+                        $destinationManager->addImage($_FILES['image_home']['name'], 1, $id);
                     }
                 }
             }
             
             // Boucle pour enregistrer plusieurs images
-            foreach($_FILES as $file) {
+            foreach($_FILES['image_slider'] as $file) {
 
                 // Vérification de l'image du slider
-                if (isset($_FILES['image_slider']) && $_FILES['image_slider']['error'] == 0) {
+                if (isset($file) && $file['error'] == 0) {
                     
                     // La taille du fichier
-                    if ($_FILES['image_slider']['size'] <= 1000000) {
+                    if ($file['size'] <= 1000000) {
                         
                         // L'autorisation de l'extension
-                        $fileInfo = pathinfo($_FILES['image_slider']['name']);
+                        $fileInfo = pathinfo($file['name']);
                         $extension = $fileInfo['extension'];
                         $allowedExtension = ['jpg', 'jpeg', 'gif', 'png'];
 
                         if (in_array($extension, $allowedExtension)) {
 
                             // Validation et stockage du fichier 
-                            move_uploaded_file($_FILES['image_slider']['tmp_name'], 'uploads/' .
-                            basename($_FILES['image_slider']['name']));
+                            move_uploaded_file($file['tmp_name'], 'uploads/' .
+                            basename($file['name']));
 
                             // Enregistrement dans la bdd
-                            $destinationManager->addImage($image_slider['name'], $image_home['name'], $id);
+                            $destinationManager->addImage($file['name'], 0, $id);
                         }
                     }
                 }

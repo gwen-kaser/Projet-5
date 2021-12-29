@@ -37,8 +37,8 @@
     <div class="container my-5">
         <div class="col">
             <div class="text-block">
-                <h4 class="font-weight-light">BORABORA, PILOTIS PALACE</h4>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis laudantium at debitis veniam recusandae ipsam saepe fugit qui!</p>
+                <h4 class="font-weight-light"><?= htmlspecialchars($destination['title']) ?></h4>
+                <p><?= ($destination['content']) ?></p>
             </div>
         </div>
     </div>
