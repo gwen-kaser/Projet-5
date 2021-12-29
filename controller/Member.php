@@ -32,7 +32,7 @@ class Member
                 $_SESSION['id'] = $resultat['id']; 
                 $_SESSION['pseudo'] = $_POST['pseudo'];
                 $_SESSION['admin'] = $resultat['admin'];
-                header('location: index.php?action=home');
+                header('location: index.php?action=listDestinationsHome');
             }
         }
     }
@@ -76,6 +76,6 @@ class Member
     {
         $_SESSION = array();
         session_destroy();
-        header('location: index.php?action=home');
+        header('location: index.php?action=listDestinationsHome');
     }
 }
