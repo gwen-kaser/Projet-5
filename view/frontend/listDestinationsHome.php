@@ -17,7 +17,7 @@
         <div class="container py-5">
             <div class="row mb-5">
                 <div class="col-md-4 offset-md-2">
-                    <img class="img-fluid" src="public/images/bahamas-under-the-sea-hotel-1.jpg" alt>
+                    <img class="img-fluid" src="<?= ($data['image_home']) ?>" alt>
                 </div>
                 <div class="col-md-5">
                     <div class="text-block">
@@ -26,7 +26,7 @@
                         
                         <!-- Condition si le membre est connecté il peut accéder à la destination -->
                         <?php if (isset($_SESSION['id'])) { ?>
-                            <a href="index.php?action=post&amp;id=<?= $data['id'] ?>"><i class="fal fa-arrow-circle-right fa-2x"></i></a>
+                            <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fal fa-arrow-circle-right fa-2x"></i></a>
                         <?php } else { ?> 
                             <a href="index.php?action=connexionView"><i class="fal fa-arrow-circle-right fa-2x"></i></a>
                         <?php } ?>

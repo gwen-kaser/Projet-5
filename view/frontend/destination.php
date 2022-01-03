@@ -14,10 +14,10 @@
                     </ul>
                     <div class="carousel-inner text-center">
                         <div class="carousel-item active">
-                            <img class="img-responsive" src="public/images/afrique-safari-palace-1.jpg" alt="">
+                            <img class="img-responsive" src="<?= ($destination['image_slider']) ?>" alt=""> 
                         </div>
                         <div class="carousel-item">
-                            <img class="img-responsive" src="public/images/canada-wood-palace-1.jpg" alt="">
+                            <img class="img-responsive" src="<?= ($destination['image_slider']) ?>" alt="">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
@@ -49,24 +49,12 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-    <script type="text/javascript">
+    <script type="text/javascript"> 
     var map = L.map('map').setView([51.505, -0.06], 20);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
     </script>
-
-    <!-- Boucle / Affichage commentaire -->
-    <div class="container"> 
-        <div class="row text-center">
-            <div class="col-12 mt-5">
-                <h4 class="font-weight-light">Commentaires</h4><br/>
-            </div>
-        </div>
-    </div>
-
-
-
 
 
 <?php $content = ob_get_clean(); ?>
