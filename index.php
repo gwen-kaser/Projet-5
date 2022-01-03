@@ -8,20 +8,22 @@ require('controller/Admin.php');
 
 try {
     if (isset($_GET['action'])) {
-        // Page d'accueil
-        if ($_GET['action'] == 'home') {
+        // Page d'accueil / Liste des destinations
+        if ($_GET['action'] == 'listDestinationsHome') {
             $website = new Website();
-            $website->home();
+            $website->listDestinationsHome();
         }
         
         // Page destination
-        if ($_GET['action'] == 'destination') {
-            $website = new Website();
-            $website->destination();
+        elseif ($_GET['action'] == 'destination') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $website = new Website();
+                $website->destination();
+            }
         }
 
         //Espace admin
-        // Page gestion des destination
+        // Page gestion des destinations
         if ($_GET['action'] == 'listDestinationsAdminView') {
             $admin = new Admin();
             $admin->listDestinationsAdminView();
@@ -33,8 +35,7 @@ try {
             $admin->addDestinationView();
         }
 
-        // L'ajout d'une nouvelle destination
-        // Vérification qu'il y a une connection + champs remplis
+        // L'ajout d'une nouvelle destinationn 
         elseif ($_GET['action'] == 'addDestination') {
             if (!empty($_SESSION['id']) && !empty($_POST['title']) && !empty($_POST['content']) && !empty($_FILES['image_slider']) && !empty($_FILES['image_home']) && !empty($_POST['latitude']) && !empty($_POST['longitude'])) {
                 $admin = new Admin();
@@ -43,6 +44,11 @@ try {
             else {
                 throw new Exception('Tous les champs ne sont pas remplis !');
             }
+        }
+
+        elseif ($_GET['action'] == 'deleteDestination') {
+            $admin = new Admin();
+            $admin->deleteDestination($_GET['id']);
         }
         
         // Espace membres
@@ -88,7 +94,7 @@ try {
 
     else {
         $website = new Website();
-        $website->home();   
+        $website->listDestinationsHome();   
     }
 }
 catch(Exception $e) {
