@@ -55,27 +55,29 @@ class Admin {
             }
             
             // Boucle pour enregistrer plusieurs images
-            foreach($_FILES['image_slider'] as $file) {
+            //var_dump($_FILES);
+           // die;
+            for($i=0; $i<count($_FILES['image_slider']['name']);$i++) {
 
                 // Vérification de l'image du slider
-                if (isset($file) && $file['error'] == 0) {
+                if (isset($_FILES['image_slider']) && $_FILES['image_slider']['error'][$i] == 0) {
                     
                     // La taille du fichier
-                    if ($file['size'] <= 1000000) {
+                    if ($_FILES['image_slider']['size'][$i] <= 1000000) {
                         
                         // L'autorisation de l'extension
-                        $fileInfo = pathinfo($file['name']);
+                        $fileInfo = pathinfo($_FILES['image_slider']['name'][$i]);
                         $extension = $fileInfo['extension'];
                         $allowedExtension = ['jpg', 'jpeg', 'gif', 'png'];
 
                         if (in_array($extension, $allowedExtension)) {
 
                             // Validation et stockage du fichier 
-                            move_uploaded_file($file['tmp_name'], 'uploads/' .
-                            basename($file['name']));
+                            move_uploaded_file($_FILES['image_slider']['tmp_name'][$i], 'uploads/' .
+                            basename($_FILES['image_slider']['name'][$i]));
 
                             // Enregistrement dans la bdd
-                            $destinationManager->addImage($file['name'], 0, $id);
+                            $destinationManager->addImage($_FILES['image_slider']['name'][$i], 0, $id);
                         }
                     }
                 }
