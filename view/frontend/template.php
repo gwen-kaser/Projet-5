@@ -37,6 +37,9 @@
                 <a class="nav-link text-light" href="index.php?action=deconnexion">SE DECONNECTER</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link text-light" href="index.php?action=contact"> VOS DESTINATIONS FAVORITES</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link text-light" href="index.php?action=contact">NOUS CONTACTER</a>
             </li>
         <?php } else { ?>
@@ -58,8 +61,8 @@
                         ADMINISTRATEUR
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="index.php?action=listDestinationsAdminView">Gestion des destination</a>
-                            <a class="dropdown-item" href="index.php?action=reportedCommentAdmin">Commentaires signalés</a>
+                            <a class="dropdown-item" href="index.php?action=listDestinationsAdminView">Gestion des destinations</a>
+                            <a class="dropdown-item" href="index.php?action=reportedCommentAdmin">Destinations favorites</a>
                         </div>
                     </li>
                 <?php }?>

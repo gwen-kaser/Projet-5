@@ -4,11 +4,15 @@ require_once('model/DestinationManager.php');
 
 class Admin {
 
-    // Page gestion des destination
+    // Méthode pour afficher les destinations
     public function listDestinationsAdminView() {
 
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse ajouter une destination
+            
+            $destinationManager = new DestinationManager(); 
         
+            $destinations = $destinationManager->getDestinations();
+
             require('view/frontend/listDestinationsAdmin.php');
         }
     }
@@ -91,4 +95,20 @@ class Admin {
             }
         }
     }
+
+    // Méthode pour supprimer une destination
+    public function deleteDestination($id) {
+
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse ajouter une destination
+            
+            $destinationManager = new DestinationManager();
+
+            $delDestination = $destinationManager->deleteDestination($id);
+            $delImage = $destinationManager->deleteImage($id);
+
+            header('Location: index.php?action=listDestinationsAdminView');
+        }
+    }
+        
+    
 }

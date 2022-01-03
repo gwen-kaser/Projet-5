@@ -29,7 +29,8 @@ class DestinationManager extends Manager
 
         return $destination;
     }
-
+    
+    // Requête pour afficher les images
     public function getImages()
     {
         $db = $this->dbConnect();
@@ -50,7 +51,8 @@ class DestinationManager extends Manager
         
         return $db->lastInsertId();
     }
-
+    
+    // Requête pour ajouter les images / gestion administrateur
     public function addImage($image_slider, $image_home, $destination_id)
     {
         $db = $this->dbConnect();
@@ -59,6 +61,26 @@ class DestinationManager extends Manager
         
         return $db->lastInsertId();
 
+    }
+
+    // Requête pour supprimer un chapitre / gestion administrateur
+    public function deleteDestination($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM destinations WHERE id = ?');
+        $delDestination = $req->execute(array($id));
+    
+        return $delDestination;
+    }
+
+    // Requête pour supprimer les images associés à la destination
+    public function deleteImage($id) 
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM images WHERE id = ?');
+        $delImage = $req->execute(array($id));
+
+        return $delImage;
     }
 
 }
