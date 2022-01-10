@@ -17,7 +17,7 @@
         <div class="container py-5">
             <div class="row mb-5">
                 <div class="col-md-4 offset-md-2">
-                    <img class="img-fluid" src="<?= ($data['image_home']) ?>" alt>
+                    <img class="img-fluid" src="uploads/<?= ($data['image_slider']) ?>" alt>
                 </div>
                 <div class="col-md-5">
                     <div class="text-block">
