@@ -13,12 +13,11 @@
                         <li data-target="#demo" data-slide-to="2"></li>
                     </ul>
                     <div class="carousel-inner text-center">
-                        <div class="carousel-item active">
-                            <img class="img-responsive" src="<?= ($destination['image_slider']) ?>" alt=""> 
-                        </div>
-                        <div class="carousel-item">
-                            <img class="img-responsive" src="<?= ($destination['image_slider']) ?>" alt="">
-                        </div>
+                        <?php foreach ($images as $index => $image):?>
+                            <div class="carousel-item <?= $index == 0 ? "active" : ""?>">
+                                <img class="img-responsive" src="uploads/<?= ($image['image_slider']) ?>" alt=""> 
+                            </div>
+                        <?php endforeach;?>
                     </div>
                     <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -39,6 +38,12 @@
             <div class="text-block">
                 <h4 class="font-weight-light"><?= htmlspecialchars($destination['title']) ?></h4>
                 <p><?= ($destination['content']) ?></p>
+                <!-- Condition destination favorite -->
+                <?php if ($favorited['favorite'] == 1) { ?>
+                    <a href="index.php?action=favoriteDestination&amp;id<?=$favorited['id']?>"><i class="fal fa-heart fa-2x text-dark"></i></a>
+                <?php } else { ?>
+                    <a href="index.php?action=favoriteDestination&amp;id<?=$favorited['id']?>"><i class="fal fa-heart fa-2x"></i></a>
+                <?php } ?>
             </div>
         </div>
     </div>
@@ -50,7 +55,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
     <script type="text/javascript"> 
-    var map = L.map('map').setView([51.505, -0.06], 20);
+    var map = L.map('map').setView([<?= ($destination['latitude'].','. $destination['longitude']); ?>],8);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
