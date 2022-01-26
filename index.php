@@ -7,8 +7,8 @@ require('controller/Member.php');
 require('controller/Admin.php');
 
 try {
+    // Page d'accueil / Liste des destinations
     if (isset($_GET['action'])) {
-        // Page d'accueil / Liste des destinations
         if ($_GET['action'] == 'listDestinationsHome') {
             $website = new Website();
             $website->listDestinationsHome();
@@ -19,6 +19,14 @@ try {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $website = new Website();
                 $website->destination();
+            }
+        }
+
+        // Destination favorite
+        elseif ($_GET['action'] == 'favorite') {
+            if (isset($_SESSION['id']) && isset($_GET['destinationId']) && isset($_SESSION['memberId'])) {
+                $website = new Website();
+                $website->favorite($_GET['id'], $_GET['destinationId'], $_SESSION['memberId']);
             }
         }
 
@@ -53,9 +61,9 @@ try {
         
         // Espace membres
         // Connexion
-        if ($_GET['action'] == 'connexionView') {
+        if ($_GET['action'] == 'connexion') {
             $member = new Member();
-            $member->connexionView();
+            $member->connexion();
         }
         
         elseif ($_GET['action'] == 'connexionUser') {
@@ -69,9 +77,9 @@ try {
             }
         
         // Inscription
-        if ($_GET['action'] == 'registrationView') {
+        if ($_GET['action'] == 'registration') {
             $member = new Member();
-            $member->registrationView();
+            $member->registration();
         }
 
         elseif ($_GET['action'] == 'saveUser') {

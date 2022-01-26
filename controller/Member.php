@@ -5,7 +5,7 @@ require_once('model/MemberManager.php');
 class Member 
 {
     // Afficher page de connexion
-    public function connexionView() 
+    public function connexion() 
     {
         require('view/frontend/connexion.php');
     }
@@ -38,7 +38,7 @@ class Member
     }
 
     // Afficher page d'inscription
-    public function registrationView()
+    public function registration()
     {
         require('view/frontend/registration.php');
     }
