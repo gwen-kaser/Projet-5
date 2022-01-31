@@ -28,7 +28,7 @@
                         <?php if (isset($_SESSION['id'])) { ?>
                             <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fal fa-arrow-circle-right fa-2x"></i></a>
                         <?php } else { ?> 
-                            <a href="index.php?action=connexionView"><i class="fal fa-arrow-circle-right fa-2x"></i></a>
+                            <a href="index.php?action=connexion"><i class="fal fa-arrow-circle-right fa-2x"></i></a>
                         <?php } ?>
                     </div>
                 </div>
