@@ -14,7 +14,7 @@ try {
             $website->listDestinationsHome();
         }
         
-        // Page destination
+        // Destination
         elseif ($_GET['action'] == 'destination') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $website = new Website();
@@ -23,6 +23,13 @@ try {
         }
 
         // Destination favorite
+        elseif ($_GET['action'] == 'destinationsFavorites') {
+                $website = new Website();
+                $website->destinationsFavorites();
+            
+        }
+
+        // Ajouter une destination favorite
         elseif ($_GET['action'] == 'addFavorite') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_SESSION['id'])) {
@@ -33,7 +40,7 @@ try {
         }
 
         //Espace admin
-        // Page gestion des destinations
+        // Gestion des destinations
         if ($_GET['action'] == 'listDestinationsAdmin') {
             $admin = new Admin();
             $admin->listDestinationsAdmin();

@@ -30,7 +30,18 @@ class Website
         require ('view/frontend/destination.php');
     }
 
-    // Méthode ajouter une destination favorite
+    public function destinationsFavorites()
+    {
+        if(!isset($_SESSION['id'])) { // Sécurité si ce n'est pas un membre redirection vers la page de connexion
+            header('Location: index.php?action=connexion');
+            die();
+        }
+
+        require ('view/frontend/destinationsFavorites.php');
+
+    }
+
+    // Méthode pour ajouter une destination favorite
     public function addFavorite($destinationId, $userId)
     {
         if(!isset($_SESSION['id'])) { // Sécurité si ce n'est pas un membre redirection vers la page de connexion
