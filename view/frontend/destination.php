@@ -38,12 +38,9 @@
             <div class="text-block">
                 <h4 class="font-weight-light"><?= htmlspecialchars($destination['title']) ?></h4>
                 <p><?= ($destination['content']) ?></p>
-                <!-- Condition destination favorite -->
-                <?php if ($favorited['favorite'] == 1) { ?>
-                    <a href="index.php?action=favoriteDestination&amp;id<?=$favorited['id']?>"><i class="fal fa-heart fa-2x text-dark"></i></a>
-                <?php } else { ?>
-                    <a href="index.php?action=favoriteDestination&amp;id<?=$favorited['id']?>"><i class="fal fa-heart fa-2x"></i></a>
-                <?php } ?>
+                <!-- Condition destination favorite / la couleur de l'incon change -->
+                
+                    <a href="index.php?action=addFavorite&amp;id=<?=$destination['id']?>"><i class="fal fa-heart fa-2x"></i></a>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@ require_once('model/DestinationManager.php');
 
 class Website 
 {
-    // Afficher la listes des destinations / page d'accueil
+    // Méthode pour afficher la listes des destinations / page d'accueil
     public function listDestinationsHome () 
     {
         $destinationManager = new DestinationManager(); 
@@ -14,15 +14,35 @@ class Website
         require ('view/frontend/listDestinationsHome.php');
     }
 
-    // Afficher page destination
+    // Méthode pour afficher une destination
     public function destination ()
     {
+        if(!isset($_SESSION['id'])) { // Sécurité si ce n'est pas un membre redirection vers la page de connexion
+            header('Location: index.php?action=connexion');
+            die();
+        }
+        
         $destinationManager = new DestinationManager();
-        
+            
         $destination = $destinationManager->getDestination($_GET['id']);
-        $images = $destinationManager->getImages();
-        
+        $images = $destinationManager->getImages($_GET['id']);
+
         require ('view/frontend/destination.php');
     }
-    
+
+    // Méthode ajouter une destination favorite
+    public function addFavorite($destinationId, $userId)
+    {
+        if(!isset($_SESSION['id'])) { // Sécurité si ce n'est pas un membre redirection vers la page de connexion
+            header('Location: index.php?action=connexion');
+            die();
+        }
+        
+        $destinationManager = new DestinationManager();
+        
+        $destinationManager->addFavorite($destinationId, $userId);
+
+        header('location: index.php?action=destination&id='. $destinationId);
+    }
+
 }
