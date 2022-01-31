@@ -20,7 +20,7 @@
                         <div class="font-italic"><?php echo $errorPassword ?? "";?></div>
                     </div>
                     <button type="submit" class="btn-primary btn-sm">CONNEXION</button><br/><br/>
-                    <a class="font-italic" href="index.php?action=registrationView">VOUS SOUHAITEZ VOUS INSCRIRE ?</a>
+                    <a class="font-italic" href="index.php?action=registration">VOUS SOUHAITEZ VOUS INSCRIRE ?</a>
                 </form>
             </div>
         </div>

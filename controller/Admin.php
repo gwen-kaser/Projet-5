@@ -5,7 +5,7 @@ require_once('model/DestinationManager.php');
 class Admin {
 
     // Méthode pour afficher les destinations
-    public function listDestinationsAdminView() {
+    public function listDestinationsAdmin() {
 
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse ajouter une destination
             
