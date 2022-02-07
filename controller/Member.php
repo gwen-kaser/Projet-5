@@ -63,7 +63,7 @@ class Member
             require('view/frontend/registration.php');
         }
         elseif ($memberManager->saveUser($pseudo, $passHache, $email)) { // L'enregistrement du membre
-            header('location: index.php?action=connexionView'); 
+            header('location: index.php?action=connexion'); 
         } 
         else { // Vérification si l'email est déjà utilisé
             $errorEmail = 'Votre email est déjà utilisé';
