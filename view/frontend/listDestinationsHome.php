@@ -21,8 +21,8 @@
                 </div>
                 <div class="col-md-5">
                     <div class="text-block">
-                        <h4 class="font-weight-light"><?= ($data['title']) ?></h4>
-                        <p><?= ($data['content']) ?></p>
+                        <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
+                        <p><?= htmlspecialchars($data['content']) ?></p>
                         
                         <!-- Condition si le membre est connecté il peut accéder à la destination -->
                         <?php if (isset($_SESSION['id'])) { ?>
@@ -39,6 +39,6 @@
     $destinations->closeCursor();
     ?>  
 
-    <?php $content = ob_get_clean(); ?>
+<?php $content = ob_get_clean(); ?>
 
-    <?php require('template.php'); ?>
+<?php require('template.php'); ?>

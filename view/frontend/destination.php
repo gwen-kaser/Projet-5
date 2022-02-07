@@ -32,12 +32,12 @@
         </div>
     </div>
 
-    <!-- Description -->
+    <!-- Description destination -->
     <div class="container my-5">
         <div class="col">
             <div class="text-block">
                 <h4 class="font-weight-light"><?= htmlspecialchars($destination['title']) ?></h4>
-                <p><?= ($destination['content']) ?></p>
+                <p><?= htmlspecialchars($destination['content']) ?></p>
                 <!-- Condition destination favorite / la couleur de l'incon change -->
                 
                     <a href="index.php?action=addFavorite&amp;id=<?=$destination['id']?>"><i class="fal fa-heart fa-2x"></i></a>

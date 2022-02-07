@@ -8,8 +8,8 @@
         </div>
     </div>
 
-        <!--Affichage des destinations-->
-        <?php
+    <!--Affichage des destinations-->
+    <?php
     while ($data = $destinations->fetch())
     {
     ?>
@@ -20,8 +20,8 @@
                 </div>
                 <div class="col-md-5">
                     <div class="text-block">
-                        <h4 class="font-weight-light"><?= ($data['title']) ?></h4>
-                        <p><?= ($data['content']) ?></p>
+                        <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
+                        <p><?= htmlspecialchars($data['content']) ?></p>
                     </div>
                     <!-- Bouton suppression et modification destination -->
                     <div class="font-italic pt-2">
