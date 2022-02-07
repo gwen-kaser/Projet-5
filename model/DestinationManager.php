@@ -5,7 +5,7 @@ require_once("model/Manager.php");
 class DestinationManager extends Manager 
 {
  
-    // Requête pour afficher les destinations + image home / page d'acceuil + gestion administrateur
+    // Requête avec jointure interne pour afficher les destinations + image home / page d'acceuil + gestion administrateur
     public function getDestinations()
     {
         $db = $this->dbConnect();
@@ -63,7 +63,7 @@ class DestinationManager extends Manager
 
     }
 
-    // Requête pour supprimer un chapitre / gestion administrateur
+    // Requête pour supprimer une destination / gestion administrateur
     public function deleteDestination($id)
     {
         $db = $this->dbConnect();
@@ -81,6 +81,22 @@ class DestinationManager extends Manager
         $delImage = $req->execute(array($id));
 
         return $delImage;
+    }
+
+    public function getDestinatonsFavorites($userId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT destinations.id, destinations.title, destinations.content, favorites.user_id, images.image_slider
+        FROM destinations
+        INNER JOIN favorites 
+        ON favorites.destination_id = destinations.id
+        AND favorites.user_id = ?
+        INNER JOIN images
+        ON images.destination_id = destinations.id
+        AND image_home = 1');
+        $req->execute([$userId]);
+
+        return $req;
     }
 
     // Requête pour ajouter une destinaton favorite

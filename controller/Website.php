@@ -37,6 +37,10 @@ class Website
             die();
         }
 
+        $destinationManager = new DestinationManager();
+
+        $displayFavorites = $destinationManager->getDestinatonsFavorites($_SESSION['id']);
+
         require ('view/frontend/destinationsFavorites.php');
 
     }

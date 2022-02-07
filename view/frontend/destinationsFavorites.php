@@ -8,6 +8,28 @@
         </div>
     </div>
 
+    <!--Affichage des destinations-->
+    <?php
+    while ($data = $displayFavorites->fetch())
+    {
+    ?>
+        <div class="container py-5">
+            <div class="row mb-5">
+                <div class="col-md-4 offset-md-2">
+                    <img class="img-fluid" src="uploads/<?= ($data['image_slider']) ?>" alt>
+                </div>
+                <div class="col-md-5">
+                    <div class="text-block">
+                        <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
+                        <p><?= htmlspecialchars($data['content']) ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
+    $displayFavorites->closeCursor();
+    ?> 
 
 
 <?php $content = ob_get_clean(); ?>
