@@ -22,6 +22,8 @@
                     <div class="text-block">
                         <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
                         <p><?= htmlspecialchars($data['content']) ?></p>
+                        <a href="index.php?action=addFavorite&amp;id=<?=$destination['id']?>"><i class="fal fa-thin fa-star fa-2x"></i></a>
+                        <?= ($data['numberFavorite']) ?>
                     </div>
                     <!-- Bouton suppression et modification destination -->
                     <div class="font-italic pt-2">

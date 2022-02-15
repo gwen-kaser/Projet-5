@@ -9,11 +9,15 @@ class DestinationManager extends Manager
     public function getDestinations()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT destinations.id, destinations.title, destinations.content, images.image_slider
-        FROM destinations
+        $req = $db->query('SELECT destinations.id, destinations.title, destinations.content, images.image_slider, 
+        COUNT(favorites.id) numberFavorite
+        FROM destinations 
         INNER JOIN images 
-        ON images.destination_id = destinations.id
-        AND image_home = 1');
+        ON images.destination_id = destinations.id 
+        AND image_home = 1 
+        LEFT JOIN favorites 
+        ON favorites.destination_id = destinations.id 
+        GROUP BY destinations.id, images.image_slider');
             
         return $req;
     }
@@ -105,6 +109,16 @@ class DestinationManager extends Manager
         $db = $this->dbConnect();
         $favorites = $db->prepare('INSERT INTO favorites(destination_id, user_id) VALUE(?, ?)');
         $favorites->execute(array($destinationId, $userId));
+    }
+
+    public function deleteFavorite($id)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM favorites WHERE id = ?');
+        $req->execute([$id]);
+
+        return $req;
+
     }
 
 }
