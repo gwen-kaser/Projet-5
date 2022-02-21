@@ -14,8 +14,8 @@
                         <label for="title">TITRE</label><br/>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="content" name="content" required="">
                         <label for="content">TEXTE</label><br/>
+                        <textarea type="text" id="content" name="content"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="image_home">IMAGE D'ACCUEIL</label><br/>
