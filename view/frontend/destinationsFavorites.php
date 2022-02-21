@@ -23,6 +23,7 @@
                         <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
                         <p><?= htmlspecialchars($data['content']) ?></p>
                     </div>
+                    <a class="font-italic" href="index.php?action=deleteFavorite&amp;id=<?= $data['id']?>">Supprimer la destination favorite</a>
                 </div>
             </div>
         </div>
