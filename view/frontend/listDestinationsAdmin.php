@@ -14,11 +14,11 @@
     {
     ?>
         <div class="container py-5">
-            <div class="row mb-5">
-                <div class="col-md-4 offset-md-2">
-                    <img class="img-fluid" src="uploads/<?= ($data['image_slider']) ?>" alt>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid mx-auto d-block" src="uploads/<?= ($data['image_slider']) ?>" alt>
                 </div>
-                <div class="col-md-5">
+                <div class="col">
                     <div class="text-block">
                         <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
                         <p><?= htmlspecialchars($data['content']) ?></p>
