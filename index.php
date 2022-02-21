@@ -39,6 +39,12 @@ try {
             }
         }
 
+        // Supprimer la destination favorite
+        elseif ($_GET['action'] == 'deleteFavorite') {
+            $website = new Website();
+            $website->deleteFavorite($_GET['id']);
+        }
+
         //Espace admin
         // Gestion des destinations
         if ($_GET['action'] == 'listDestinationsAdmin') {

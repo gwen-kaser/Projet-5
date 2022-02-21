@@ -30,6 +30,7 @@ class Website
         require ('view/frontend/destination.php');
     }
 
+    // Méthode pour afficher les destinations favorites
     public function destinationsFavorites()
     {
         if(!isset($_SESSION['id'])) { // Sécurité si ce n'est pas un membre redirection vers la page de connexion
@@ -38,7 +39,6 @@ class Website
         }
 
         $destinationManager = new DestinationManager();
-
         $displayFavorites = $destinationManager->getDestinatonsFavorites($_SESSION['id']);
 
         require ('view/frontend/destinationsFavorites.php');
@@ -54,10 +54,25 @@ class Website
         }
         
         $destinationManager = new DestinationManager();
-        
         $destinationManager->addFavorite($destinationId, $userId);
 
         header('location: index.php?action=destination&id='. $destinationId);
+    }
+
+    public function deleteFavorite($id)
+    {
+        if(!isset($_SESSION['id'])) { // Sécurité si ce n'est pas un membre redirection vers la page de connexion
+            header('Location: index.php?action=connexion');
+            die();
+        }
+
+        if (isset($_SESSION['id'])) { // Vérification si l'utilisateur est connecté
+
+            $destinationManager = new DestinationManager;
+            $destinationManager->deleteFavorite($id);
+
+            header('location: index.php?action=destinationsFavorites');
+        }
     }
 
 }
