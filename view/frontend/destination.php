@@ -38,19 +38,22 @@
             <div class="text-block">
                 <h4 class="font-weight-light"><?= htmlspecialchars($destination['title']) ?></h4>
                 <p><?= htmlspecialchars($destination['content']) ?></p>
-                <!-- Condition destination favorite / la couleur de l'incon change -->
                 
-                    <a href="index.php?action=addFavorite&amp;id=<?=$destination['id']?>"><i class="fal fa-heart fa-2x"></i></a>
+                <!-- Condition destination favorite / la couleur de l'incon change -->
+                <?php if ($destination['user_id']) { ?> 
+                    <a href="index.php?action=addFavorite&amp;id=<?=$destination['id']?>"><i class="fa-solid fa-star fa-2x"></i></a>
+                <?php } else { ?> 
+                    <a href="index.php?action=addFavorite&amp;id=<?=$destination['id']?>"><i class="fa-regular fa-star fa-2x"></i></a>
+                <?php } ?> 
             </div>
         </div>
     </div>
     
     <!-- Map -->
     <div id="map"></div>
-
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-
+    
     <script type="text/javascript"> 
     var map = L.map('map').setView([<?= ($destination['latitude'].','. $destination['longitude']); ?>],8);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

@@ -24,12 +24,17 @@ class DestinationManager extends Manager
     }
 
     // Requête pour afficher une destination
-    public function getDestination($destinationId)
+    public function getDestination($userId, $destinationId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT id, title, content, latitude, longitude FROM destinations WHERE id = ?');
+        $req = $db->prepare('SELECT DISTINCT destinations.id, destinations.title, destinations.content, destinations.latitude, destinations.longitude, favorites.user_id 
+        FROM destinations 
+        LEFT JOIN favorites 
+        ON favorites.destination_id = destinations.id 
+        AND favorites.user_id = ? 
+        WHERE destinations.id = ?');
 
-        $req->execute(array($destinationId));
+        $req->execute(array($userId, $destinationId));
         $destination = $req->fetch();
 
         return $destination;
@@ -112,14 +117,14 @@ class DestinationManager extends Manager
         $favorites->execute(array($destinationId, $userId));
     }
 
-    public function deleteFavorite($id)
+    public function deleteFavorite($destinationId, $userId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('DELETE FROM favorites WHERE id = ?');
-        $req->execute([$id]);
+        $req = $db->prepare('DELETE FROM favorites 
+        WHERE destination_id = ? AND user_id = ?');
+        $req->execute([$destinationId, $userId]);
 
         return $req;
-
     }
 
 }

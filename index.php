@@ -41,8 +41,12 @@ try {
 
         // Supprimer la destination favorite
         elseif ($_GET['action'] == 'deleteFavorite') {
-            $website = new Website();
-            $website->deleteFavorite($_GET['id']);
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                if (!empty($_SESSION['id'])) {
+                    $website = new Website();
+                    $website->deleteFavorite($_GET['id'], $_SESSION['id']);
+                }
+            }   
         }
 
         //Espace admin

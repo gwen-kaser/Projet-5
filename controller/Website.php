@@ -24,7 +24,7 @@ class Website
         
         $destinationManager = new DestinationManager();
             
-        $destination = $destinationManager->getDestination($_GET['id']);
+        $destination = $destinationManager->getDestination($_SESSION['id'], $_GET['id']);
         $images = $destinationManager->getImages($_GET['id']);
 
         require ('view/frontend/destination.php');
@@ -59,7 +59,7 @@ class Website
         header('location: index.php?action=destination&id='. $destinationId);
     }
 
-    public function deleteFavorite($id)
+    public function deleteFavorite($destinationId, $userId)
     {
         if(!isset($_SESSION['id'])) { // Sécurité si ce n'est pas un membre redirection vers la page de connexion
             header('Location: index.php?action=connexion');
@@ -69,7 +69,7 @@ class Website
         if (isset($_SESSION['id'])) { // Vérification si l'utilisateur est connecté
 
             $destinationManager = new DestinationManager;
-            $destinationManager->deleteFavorite($id);
+            $destinationManager->deleteFavorite($destinationId, $userId);
 
             header('location: index.php?action=destinationsFavorites');
         }
