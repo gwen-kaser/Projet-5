@@ -17,7 +17,8 @@ class DestinationManager extends Manager
         AND image_home = 1 
         LEFT JOIN favorites 
         ON favorites.destination_id = destinations.id 
-        GROUP BY destinations.id, images.image_slider');
+        GROUP BY destinations.id, images.image_slider
+        ORDER BY destinations.created_date DESC');
             
         return $req;
     }
