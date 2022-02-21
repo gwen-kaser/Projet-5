@@ -59,8 +59,6 @@ class Admin {
             }
             
             // Boucle pour enregistrer plusieurs images
-            //var_dump($_FILES);
-           // die;
             for($i=0; $i<count($_FILES['image_slider']['name']);$i++) {
 
                 // Vérification de l'image du slider
@@ -91,7 +89,7 @@ class Admin {
                 throw new Exeption('Impossible d\'ajouter la destination !');
             }
             else {
-                header('Location: index.php?action=listDestinationsAdminView'); 
+                header('Location: index.php?action=listDestinationsAdmin'); 
             }
         }
     }
