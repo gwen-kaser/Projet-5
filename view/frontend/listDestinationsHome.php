@@ -10,12 +10,11 @@
     </div>  
 
     <div class="container text-center py-5">
-        <div class="jumbotron bg-light border border-primary border border-top-0 border border-end-0 shadow">
-            <h3 class="font-weight-light font-italic">NUITS INSOLITES</h3>
-            <p class="font-italic">
-            Vous propose plusieurs destinations avec des séjours INSOLITES
-            que vous n'êtes pret d'oublier !<br/>
-            Pour les découvrir, Connectez-vous ou inscrivez-vous pour tout savoir sur ces hôtels qui vous feront rêver !
+        <div class="jumbotron bg-light border border-primary border border-top-0 border border-end-0"> 
+            <h3 class="font-weight-light font-italic">NUITS INSOLITES VOUS SOUHAITE LA BIENVENUE</h3>
+            <p class="font-italic pt-2">
+            Êtes-vous à la recherche de destination de rêve pour passer une nuit innoubliable ?<br/>
+            Inscrivez-vous ou connectez-vous pour découvrir une sélection d'hôtels qui ne vous laissera pas indifférant ! 
             </p> 
         </div>
     </div>
@@ -41,9 +40,9 @@
                         
                         <!-- Condition si le membre est connecté il peut accéder à la destination -->
                         <?php if (isset($_SESSION['id'])) { ?>
-                            <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fal fa-arrow-circle-right fa-2x"></i></a>
+                            <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fa-solid fa-arrow-right-long fa-2x"></i></a>
                         <?php } else { ?> 
-                            <a href="index.php?action=connexion"><i class="fal fa-arrow-circle-right fa-2x"></i></a>
+                            <a href="index.php?action=connexion"><i class="fa-solid fa-arrow-right-long fa-2x"></i></a>
                         <?php } ?>
                     </div>
                 </div>
