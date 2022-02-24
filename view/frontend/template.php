@@ -10,7 +10,8 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
         crossorigin="anonymous">
 
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         
         <link href="public/css/style.css" rel="stylesheet" />
         <link href="public/css/bootstrap.css" rel="stylesheet" />
@@ -31,38 +32,35 @@
     <!-- Condition si un membre se connecte -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-        <?php if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {?>
-            Bonjour <?=($_SESSION['pseudo']);?>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="index.php?action=deconnexion">SE DECONNECTER</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="index.php?action=destinationsFavorites"> MES DESTINATIONS FAVORITES</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="index.php?action=contact">NOUS CONTACTER</a>
-            </li>
-        <?php } else { ?>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="index.php?action=registration">S'INSCRIRE</a> 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="index.php?action=connexion">SE CONNECTER</a> 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="index.php?action=contact">NOUS CONTACTER</a>
-            </li>
-        <?php }?>
+                <?php if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {?>
+                Bonjour <?=($_SESSION['pseudo']);?>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.php?action=deconnexion">SE DECONNECTER</a>
+                    </li>
+                <?php if (!isset($_SESSION['admin'])) {?>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.php?action=destinationsFavorites"> MES DESTINATIONS FAVORITES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.php?action=contact">NOUS CONTACTER</a>
+                    </li>
+                <?php }?>
+                <?php } else { ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.php?action=registration">S'INSCRIRE</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.php?action=connexion">SE CONNECTER</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.php?action=contact">NOUS CONTACTER</a>
+                    </li>
+                <?php }?>
     <!-- Dropdown -->
     <!-- Condition si l'administrateur se connect -->
                 <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        ADMINISTRATEUR
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="index.php?action=listDestinationsAdmin">Gestion des destinations</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="index.php?action=listDestinationsAdmin">Gestion des destinations</a>
                     </li>
                 <?php }?>
             </ul>
@@ -76,9 +74,9 @@
     <div class="footer border text-dark bg-primary mt-5">
         <div class="row py-4 text-center">
             <div class="col">
-                <a href=""><i class="fab fa-facebook-f fa-lg text-light mr-5 fa-2x"></i></a>
-                <a href=""><i class="fab fa-twitter fa-lg text-light mr-5 fa-2x"></i></a>
-                <a href=""><i class="fab fa-instagram fa-lg text-light fa-2x"></i></a>
+                <a href=""><i class="fa-brands fa-facebook-f text-light mr-5 fa-2x"></i></a>
+                <a href=""><i class="fa-brands fa-twitter text-light mr-5 fa-2x"></i></a>
+                <a href=""><i class="fa-brands fa-instagram text-light fa-2x"></i></a>
             </div>
         </div>
         <div class="link text-center py-1 bg-light">
