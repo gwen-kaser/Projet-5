@@ -13,8 +13,8 @@ class Images {
         let div = document.createElement("div");
         let icon = document.createElement("i");
         div.className = "flex-input";
-        icon.classList.add("fal");
-        icon.classList.add("fa-backspace");
+        icon.classList.add("fa-solid");
+        icon.classList.add("fa-xmark");
         line.setAttribute("type","file",);
         line.setAttribute("name","image_slider[]");
         // Supprimer input avec l'icon
