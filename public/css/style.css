@@ -12,10 +12,6 @@ a {
     width: 60%; 
 }
 
-.fal:hover {
-    font-size: 22px;
-}
-
 .text-block {
     padding-bottom: 10px;
     border-bottom: 1px solid black;
@@ -24,10 +20,16 @@ a {
 /* Destination */
 
 .carousel-inner img {
-    max-width: 100%;
-    max-height: 100%;
+   width: 75%;   
 }
 
+.carousel-control-next  {
+    filter: invert(100%);
+    }
+
+.carousel-control-prev {
+    filter: invert(100%);
+    }
 
 #map {
     width: 800px; 
