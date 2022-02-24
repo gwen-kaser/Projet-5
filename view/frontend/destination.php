@@ -4,14 +4,9 @@
 
     <!-- Diaporama -->
     <div class="container mt-5">
-        <div class="row bg-primary">
+        <div class="row bg-light border border-0">
             <div class="col">
                 <div id="carouselControls" class="carousel slide" data-ride="carousel">
-                    <ul class="carousel-indicators">
-                        <li data-target="#demo" data-slide-to="0" class="active"></li>
-                        <li data-target="#demo" data-slide-to="1"></li>
-                        <li data-target="#demo" data-slide-to="2"></li>
-                    </ul>
                     <div class="carousel-inner text-center">
                         <?php foreach ($images as $index => $image):?>
                             <div class="carousel-item <?= $index == 0 ? "active" : ""?>">
