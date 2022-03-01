@@ -104,7 +104,7 @@ class Admin {
             $delDestination = $destinationManager->deleteDestination($id);
             $delImage = $destinationManager->deleteImage($id);
 
-            header('Location: index.php?action=listDestinationsAdminView');
+            header('Location: index.php?action=listDestinationsAdmin');
         }
     }
         
