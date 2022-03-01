@@ -49,6 +49,12 @@ try {
             }   
         }
 
+        // Page contact
+        elseif ($_GET['action'] == 'contact') {
+            $website = new Website();
+            $website->contact();
+        }
+
         //Espace admin
         // Gestion des destinations
         if ($_GET['action'] == 'listDestinationsAdmin') {

@@ -45,6 +45,11 @@ a {
     align-items: center;
 }
 
+button:hover {
+    background-color: black;
+    color: white;
+}
+
 /* Connexion + inscription */
 
 .form-group {
