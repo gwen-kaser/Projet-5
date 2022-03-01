@@ -37,7 +37,7 @@
                         <input type="text" id="longitude" name="longitude" required="">
                         <label for="longitude">LONGITUDE</label><br/>
                     </div>
-                    <button type="submit" class="btn-primary btn-sm">CONFIRMER</button>
+                    <button type="submit" class="border border-primary btn-sm">CONFIRMER</button>
                 </form>
             </div>
         </div>
