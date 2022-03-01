@@ -37,7 +37,8 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="index.php?action=deconnexion">SE DECONNECTER</a>
                     </li>
-                <?php if (!isset($_SESSION['admin'])) {?>
+                <!-- Si l'administrateur se connect -->    
+                <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == false) {?>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="index.php?action=destinationsFavorites"> MES DESTINATIONS FAVORITES</a>
                     </li>
