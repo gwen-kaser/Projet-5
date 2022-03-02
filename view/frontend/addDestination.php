@@ -18,6 +18,18 @@
                         <textarea type="text" id="content" name="content"></textarea>
                     </div>
                     <div class="form-group">
+                        <label for="address">ADRESSE</label><br/>
+                        <textarea type="text" id="address" name="address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="price" name="price" required="">
+                        <label for="price">TARIF</label><br/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="link" name="link" required="">
+                        <label for="link">LIEN</label><br/>
+                    </div>
+                    <div class="form-group">
                         <label for="image_home">IMAGE D'ACCUEIL</label><br/>
                         <input type="file" class="form-control" id="image_home" name="image_home">
                     </div>
