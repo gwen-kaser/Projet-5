@@ -23,7 +23,7 @@
     <!--Navbar-->
     <nav class="navbar navbar-dark bg-primary py-1">
         <a class="navbar-brand py-3" href="index.php">
-            <img src="public/images/logo.png" width="90" height="60" alt="Site logo">
+            <img class="img-fluid w-25" src="public/images/logo.png" alt="Site logo">
         </a>
     <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
