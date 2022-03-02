@@ -25,19 +25,18 @@
                     <img class="img-fluid w-50" src="uploads/<?= ($data['image_slider']) ?>" alt>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="text-block">
-                        <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
-                        <p><?= htmlspecialchars($data['content']) ?></p>
-                        <a href="index.php?action=addFavorite&amp;id=<?=$destination['id']?>"><i class="fa-regular fa-star fa-2x"></i></a>
-                        <?= ($data['numberFavorite']) ?>
-                    </div>
-                    <!-- Bouton suppression et modification destination -->
-                    <div class="pt-2">
-                        <a href= "">Modifier</a> |
-                        <a href= "index.php?action=deleteDestination&amp;id=<?= $data['id']?>">Supprimer</a>
-                    </div>
+            <div class="col">
+                <div class="text-block">
+                    <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
+                    <p><?= htmlspecialchars($data['content']) ?></p>
+                    <i class="fa-regular fa-star"></i>
+                    <?= ($data['numberFavorite']) ?>
+                </div>
+                
+                <!-- Bouton suppression et modification destination -->
+                <div class="pt-2">
+                    <a href= ""class="font-italic">Modifier</a> |
+                    <a href= "index.php?action=deleteDestination&amp;id=<?= $data['id']?>" class="font-italic">Supprimer</a>
                 </div>
             </div>
         </div>
