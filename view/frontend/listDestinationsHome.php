@@ -1,4 +1,4 @@
-<?php $title = 'Nuits insolites/accueil'; ?>
+<?php $title = 'Nuits insolites / Accueil'; ?>
 
 <?php ob_start(); ?>
 
@@ -9,12 +9,12 @@
         </div>
     </div>  
 
-    <div class="container text-center py-5">
+    <div class="container py-5">
         <div class="jumbotron bg-light border border-primary border border-top-0 border border-end-0"> 
-            <h3 class="font-weight-light font-italic">NUITS INSOLITES VOUS SOUHAITE LA BIENVENUE</h3>
+            <h2 class="font-weight-light">NUITS INSOLITES</h2>
             <p class="font-italic pt-2">
-            Êtes-vous à la recherche de destination de rêve pour passer une nuit innoubliable ?<br/>
-            Inscrivez-vous ou connectez-vous pour découvrir une sélection d'hôtels qui ne vous laissera pas indifférant ! 
+            Vous propose plusieurs destinations avec des séjours INSOLITES que vous n'êtes pas prêt d'oublier !<br/>
+            Pour les découvrir, connectez-vous ou inscrivez-vous pour tout savoir sur ces hôtels qui vous feront rêver !
             </p> 
         </div>
     </div>
@@ -38,7 +38,7 @@
                         ?>
                         <p><?= htmlspecialchars($data['content']) ?></p>
                         
-                        <!-- Condition si le membre est connecté il peut accéder à la destination -->
+                        <!-- Condition si le membre est connecté il peut accéder à la destination sinon redirection page connexion -->
                         <?php if (isset($_SESSION['id'])) { ?>
                             <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fa-solid fa-arrow-right-long fa-2x"></i></a>
                         <?php } else { ?> 
