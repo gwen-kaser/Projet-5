@@ -45,12 +45,16 @@ a {
     align-items: center;
 }
 
+textarea {
+    width: 100%;
+}
+
+/* Connexion + inscription + l'ajout d'une destination */
+
 button:hover {
     background-color: black;
     color: white;
 }
-
-/* Connexion + inscription */
 
 .form-group {
 	position:relative;
