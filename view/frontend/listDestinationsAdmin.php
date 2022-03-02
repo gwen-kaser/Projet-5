@@ -29,14 +29,16 @@
                 <div class="text-block">
                     <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
                     <p><?= htmlspecialchars($data['content']) ?></p>
+                    <p>TARIF : <?= htmlspecialchars($data['price']) ?></p>
+                    <p>LIEN DU SITE : <?= htmlspecialchars($data['link']) ?></p>
                     <i class="fa-regular fa-star"></i>
                     <?= ($data['numberFavorite']) ?>
                 </div>
                 
                 <!-- Bouton suppression et modification destination -->
                 <div class="pt-2">
-                    <a href= ""class="font-italic">Modifier</a> |
-                    <a href= "index.php?action=deleteDestination&amp;id=<?= $data['id']?>" class="font-italic">Supprimer</a>
+                    <a href= ""class="font-italic">MODIFIER</a> |
+                    <a href= "index.php?action=deleteDestination&amp;id=<?= $data['id']?>" class="font-italic">SUPPRIMER</a>
                 </div>
             </div>
         </div>

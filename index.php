@@ -70,9 +70,9 @@ try {
 
         // L'ajout d'une nouvelle destinationn 
         elseif ($_GET['action'] == 'addDestination') {
-            if (!empty($_SESSION['id']) && !empty($_POST['title']) && !empty($_POST['content']) && !empty($_FILES['image_slider']) && !empty($_FILES['image_home']) && !empty($_POST['latitude']) && !empty($_POST['longitude'])) {
+            if (!empty($_SESSION['id']) && !empty($_POST['title']) && !empty($_POST['content']) && !empty($_FILES['image_slider']) && !empty($_FILES['image_home']) && !empty($_POST['latitude']) && !empty($_POST['longitude']) && !empty($_POST['address']) && !empty($_POST['price']) && !empty($_POST['link'])) {
                 $admin = new Admin();
-                $admin->addDestination($_SESSION['id'], $_POST['title'], $_POST['content'], $_FILES['image_slider'], $_FILES['image_home'], $_POST['latitude'], $_POST['longitude']);
+                $admin->addDestination($_SESSION['id'], $_POST['title'], $_POST['content'], $_FILES['image_slider'], $_FILES['image_home'], $_POST['latitude'], $_POST['longitude'], $_POST['address'], $_POST['price'], $_POST['link']);
             }
             else {
                 throw new Exception('Tous les champs ne sont pas remplis !');

@@ -33,6 +33,8 @@
             <div class="text-block">
                 <h4 class="font-weight-light"><?= htmlspecialchars($destination['title']) ?></h4>
                 <p><?= htmlspecialchars($destination['content']) ?></p>
+                <p>TARIF : <?= htmlspecialchars($destination['price']) ?></p>
+                <p>LIEN DU SITE : <?= htmlspecialchars($destination['link']) ?></p>
                 
                 <!-- Condition destination favorite / la couleur de l'incon change -->
                 <?php if ($destination['user_id']) { ?> 

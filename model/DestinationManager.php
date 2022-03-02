@@ -9,7 +9,7 @@ class DestinationManager extends Manager
     public function getDestinations()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT destinations.id, destinations.title, destinations.content, images.image_slider, 
+        $req = $db->query('SELECT destinations.id, destinations.title, destinations.content, destinations.address, destinations.price, destinations.link, images.image_slider, 
         COUNT(favorites.id) numberFavorite
         FROM destinations 
         INNER JOIN images 
@@ -27,7 +27,7 @@ class DestinationManager extends Manager
     public function getDestination($userId, $destinationId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT DISTINCT destinations.id, destinations.title, destinations.content, destinations.latitude, destinations.longitude, favorites.user_id 
+        $req = $db->prepare('SELECT DISTINCT destinations.id, destinations.title, destinations.content, destinations.latitude, destinations.longitude, destinations.address, destinations.price, destinations.link, favorites.user_id 
         FROM destinations 
         LEFT JOIN favorites 
         ON favorites.destination_id = destinations.id 
@@ -53,11 +53,11 @@ class DestinationManager extends Manager
     }
 
     // Requête pour ajouter une destination / gestion administrateur
-    public function addDestination($userId, $title, $content, $latitude, $longitude)
+    public function addDestination($userId, $title, $content, $latitude, $longitude, $address, $price, $link)
     {
         $db = $this->dbConnect();
-        $destinations = $db->prepare('INSERT INTO destinations(title, user_id, content, created_date, latitude, longitude) VALUES(?, ?, ?, NOW(), ?, ?)');
-        $destinations->execute(array($title, $userId, $content, $latitude, $longitude));
+        $destinations = $db->prepare('INSERT INTO destinations(title, user_id, content, created_date, latitude, longitude, address, price, link) VALUES(?, ?, ?, NOW(), ?, ?, ?, ?, ?)');
+        $destinations->execute(array($title, $userId, $content, $latitude, $longitude, $address, $price, $link));
         
         return $db->lastInsertId();
     }
@@ -96,7 +96,7 @@ class DestinationManager extends Manager
     public function getDestinatonsFavorites($userId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT destinations.id, destinations.title, destinations.content, favorites.user_id, images.image_slider
+        $req = $db->prepare('SELECT destinations.id, destinations.title, destinations.content, destinations.address, destinations.price, destinations.link, favorites.user_id, images.image_slider
         FROM destinations
         INNER JOIN favorites 
         ON favorites.destination_id = destinations.id

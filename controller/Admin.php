@@ -5,8 +5,8 @@ require_once('model/DestinationManager.php');
 class Admin {
 
     // Méthode pour afficher les destinations
-    public function listDestinationsAdmin() {
-
+    public function listDestinationsAdmin() 
+    {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse ajouter une destination
             
             $destinationManager = new DestinationManager(); 
@@ -27,13 +27,13 @@ class Admin {
     }
 
     // Méthode pour ajouter une destination
-    public function addDestination ($userId, $title, $content, $image_slider, $image_home, $latitude, $longitude)
+    public function addDestination($userId, $title, $content, $image_slider, $image_home, $latitude, $longitude, $address, $price, $link)
     { 
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse ajouter une destination
         
             $destinationManager = new DestinationManager();
                     
-            $id = $destinationManager->addDestination($userId, $title, $content, $latitude, $longitude);
+            $id = $destinationManager->addDestination($userId, $title, $content, $latitude, $longitude, $address, $price, $link);
             
             // Vérification de l'image d'accueil
             if (isset($_FILES['image_home']) && $_FILES['image_home']['error'] == 0) {
@@ -95,8 +95,8 @@ class Admin {
     }
 
     // Méthode pour supprimer une destination
-    public function deleteDestination($id) {
-
+    public function deleteDestination($id) 
+    {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse ajouter une destination
             
             $destinationManager = new DestinationManager();
