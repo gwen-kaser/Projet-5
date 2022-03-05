@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-    <!-- Inscription -->
+    <!-- L'ajout d'une destination -->
     <div class="container">
         <div class="row mt-5 justify-content-center text-primary">
             <div class="col-12 col-md-6 col-lg-4 py-5">
