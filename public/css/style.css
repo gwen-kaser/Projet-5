@@ -38,18 +38,19 @@ a {
     margin-right: auto;
 }
 
-/* Ajout destination */
+/* Ajout + modification destination */
 
 .flex-input {
     display: flex;
     align-items: center;
 }
 
-textarea {
+textarea#content, textarea#address {
     width: 100%;
+    font-size: 13px;
 }
 
-/* Connexion + inscription + l'ajout d'une destination */
+/* Connexion + inscription + l'ajout/modification d'une destination */
 
 button:hover {
     background-color: black;
