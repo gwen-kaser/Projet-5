@@ -37,7 +37,7 @@
                 
                 <!-- Bouton suppression et modification destination -->
                 <div class="pt-2">
-                    <a href= ""class="font-italic">MODIFIER</a> |
+                    <a href= "index.php?action=displayEditDestination&amp;id=<?= $data['id']?>" class="font-italic">MODIFIER</a> |
                     <a href= "index.php?action=deleteDestination&amp;id=<?= $data['id']?>" class="font-italic">SUPPRIMER</a>
                 </div>
             </div>
