@@ -10,11 +10,11 @@
 
     <div class="container py-5 my-5">
         <div class="jumbotron-fluid py-5 px-5 bg-light border border-primary border border-top-0 border border-end-0 shadow"> 
-            <h2 class="font-weight-light font-italic">CONTACT</h2>
+            <h2 class="font-weight-light font-italic">CONTACTEZ-NOUS</h2>
             <p class="font-italic pt-2">
                 Nous pouvons vous aidez à trouver votre nuit de rêve !</br>  
                 Exprimer vos désires et nous les réaliserons.</br></br>
-                <span class="font-italic">nuitsinsolites.com</span>
+                <span class="font-italic">nuitsinsolites@gmail.com</span>
             </p>
         </div>
     </div>
