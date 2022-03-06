@@ -2,15 +2,18 @@
 
 <?php ob_start(); ?>
 
-    <div class="jumbotron jumbotron-fluid" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover;">
-        <div class="container py-5 text-center">
-            <img class="img-fluid mb-5" src="public/images/logo.png" alt>
+    <div class="img" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;" alt="Paysage insolite;">
+        <div class="logo text-center">
+            <img class="img-fluid" src="public/images/logo.png" alt="logo">
         </div>
-    </div>
+    </div> 
 
-    <div class="container text-center py-5">
-        <div class="jumbotron bg-light border border-primary border border-top-0 border border-end-0"> 
-            <h3 class="font-weight-light font-italic">GESTION DES DESTINATIONS</h3>
+    <div class="container py-5 my-5">
+        <div class="jumbotron-fluid py-5 px-5 bg-light border border-primary border border-top-0 border border-end-0 shadow"> 
+            <h2 class="font-weight-light font-italic">GESTION DES DESTINATIONS</h2>
+            <p class="font-italic pt-2">
+                Ajouter / Modifier / Supprimer une destination
+            </p> 
         </div>
     </div>
 
@@ -29,8 +32,8 @@
                 <div class="text-block">
                     <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
                     <p><?= htmlspecialchars($data['content']) ?></p>
-                    <p>TARIF : <?= htmlspecialchars($data['price']) ?></p>
-                    <p>LIEN DU SITE : <?= htmlspecialchars($data['link']) ?></p>
+                    <p>Tarif : <?= htmlspecialchars($data['price']) ?></p>
+                    <p>Lien du site : <?= htmlspecialchars($data['link']) ?></p>
                     <i class="fa-regular fa-star"></i>
                     <?= ($data['numberFavorite']) ?>
                 </div>

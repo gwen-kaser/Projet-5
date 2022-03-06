@@ -2,16 +2,20 @@
 
 <?php ob_start(); ?>
 
-    <div class="jumbotron jumbotron-fluid" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover;">
-        <div class="container py-5 text-center">
-            <img class="img-fluid mb-5" src="public/images/logo.png" alt>
+    <div class="img" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;" alt="Paysage insolite;">
+        <div class="logo text-center">
+            <img class="img-fluid" src="public/images/logo.png" alt="logo">
         </div>
-    </div>
+    </div> 
 
-    <div class="container text-center py-5">
-        <div class="jumbotron bg-light border border-primary border border-top-0 border border-end-0"> 
-            <h3 class="font-weight-light font-italic">CONTACTEZ-NOUS</h3>
-            <p class="font-italic pt-2">Vous recherchez la  </p>
+    <div class="container py-5 my-5">
+        <div class="jumbotron-fluid py-5 px-5 bg-light border border-primary border border-top-0 border border-end-0 shadow"> 
+            <h2 class="font-weight-light font-italic">CONTACT</h2>
+            <p class="font-italic pt-2">
+                Nous pouvons vous aidez à trouver votre nuit de rêve !</br>  
+                Exprimer vos désires et nous les réaliserons.</br></br>
+                <span class="font-italic">nuitsinsolites.com</span>
+            </p>
         </div>
     </div>
 
