@@ -9,12 +9,12 @@
         </div>
     </div>  
 
-    <div class="container py-5">
-        <div class="jumbotron bg-light border border-primary border border-top-0 border border-end-0"> 
-            <h2 class="font-weight-light">NUITS INSOLITES</h2>
+    <div class="container py-5 my-5">
+        <div class="jumbotron-fluid py-5 px-5 bg-light border border-primary border border-top-0 border border-end-0 shadow"> 
+            <h2 class="font-weight-light font-italic">NUITS INSOLITES</h2>
             <p class="font-italic pt-2">
-            Vous propose plusieurs destinations avec des séjours INSOLITES que vous n'êtes pas prêt d'oublier !<br/>
-            Pour les découvrir, connectez-vous ou inscrivez-vous pour tout savoir sur ces hôtels qui vous feront rêver !
+                Vous propose plusieurs destinations avec des séjours INSOLITES que vous n'êtes pas prêt d'oublier !<br/>
+                Pour les découvrir, connectez-vous ou inscrivez-vous pour tout savoir sur ces hôtels qui vous feront rêver !
             </p> 
         </div>
     </div>
@@ -25,8 +25,8 @@
     {
     ?>
         <div class="container py-5">
-            <div class="row mb-5">
-                <div class="col-md-4 offset-md-2">
+            <div class="row pb-5">
+                <div class="col-md-5 offset-md-1">
                     <img class="img-fluid" src="uploads/<?= ($data['image_slider']) ?>" alt="Nuits insolites">
                 </div>
                 <div class="col-md-5">
