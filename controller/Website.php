@@ -75,7 +75,7 @@ class Website
             
             $destinationManager->deleteFavorite($destinationId, $userId);
 
-            header('location: index.php?action=destinationsFavorites');
+            header('location: index.php?action=destination&id='. $destinationId);
         }
     }
 
