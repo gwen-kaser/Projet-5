@@ -5,7 +5,7 @@
     <!-- L'ajout d'une destination -->
     <div class="container">
         <div class="row mt-5 justify-content-center text-primary">
-            <div class="col-12 col-md-6 col-lg-4 py-5">
+            <div class="col-12 col-md-6 py-5">
                 <h3 class="pb-5">NOUVELLE DESTINATION</h3>
                 
                 <form action="index.php?action=addDestination" method="post" enctype="multipart/form-data">
