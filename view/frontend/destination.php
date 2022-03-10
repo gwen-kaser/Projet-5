@@ -10,7 +10,7 @@
                     <div class="carousel-inner">
                         <?php foreach ($images as $index => $image):?>
                             <div class="carousel-item <?= $index == 0 ? "active" : ""?>">
-                                <img class="img-responsive" src="uploads/<?= ($image['image_slider']) ?>" alt=""> 
+                                <img class="img-responsive" src="uploads/<?= ($image['image_slider']) ?>" alt="Hôtel insolite"> 
                             </div>
                         <?php endforeach;?>
                     </div>
@@ -58,9 +58,9 @@
             attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        var marker = L.marker()
+        var marker = L.marker([<?= ($destination['latitude'].','. $destination['longitude']); ?>])
             .addTo(map)
-            .bindPopup('')
+            .bindPopup('<?= ($destination['address']) ?>')
             .openPopup();
 
     </script>
