@@ -79,6 +79,26 @@ try {
             }
         }
 
+        // Afficher la destination à modifier
+        elseif ($_GET['action'] == 'displayEditDestination') {
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $admin = new Admin();
+                $admin->displayEditDestination();
+            }
+        }
+
+        // Modifier une destination
+        elseif ($_GET['action'] == 'editDestination') {
+            if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_FILES['image_slider']) && !empty($_FILES['image_home']) && !empty($_POST['latitude']) && !empty($_POST['longitude']) && !empty($_POST['address']) && !empty($_POST['price']) && !empty($_POST['link'])) {
+                $admin = new Admin();
+                $admin->editDestination($_GET['id'], $_POST['title'], $_POST['content'], $_FILES['image_slider'], $_FILES['image_home'], $_POST['latitude'], $_POST['longitude'], $_POST['address'], $_POST['price'], $_POST['link']);
+            }
+            else {
+                throw new Exeption('Tous les champs ne sont pas remplis !');
+            }
+        }
+
+        // Suppression destination
         elseif ($_GET['action'] == 'deleteDestination') {
             $admin = new Admin();
             $admin->deleteDestination($_GET['id']);
