@@ -34,8 +34,16 @@
                     <p><?= htmlspecialchars($data['content']) ?></p>
                     <p>Tarif : <?= htmlspecialchars($data['price']) ?></p>
                     <p>Lien du site : <?= htmlspecialchars($data['link']) ?></p>
-                    <i class="fa-regular fa-star"></i>
-                    <?= ($data['numberFavorite']) ?>
+                    <!-- Condition destination favorite / la couleur de l'incon change -->
+                    <?php if ($data['numberFavorite']) { ?> 
+                        <!-- Si c'est favoris -->
+                        <i class="fa-solid fa-star text-primary"></i></a>
+                    <?php } else { ?> 
+                        <i class="fa-regular fa-star"></i></a>
+                    <?php } ?>
+                    <!-- Nombre de favoris -->
+                    <?= ($data['numberFavorite']) ?></br>
+                    <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fa-solid fa-arrow-right-long fa-2x mt-2"></i></a>
                 </div>
                 
                 <!-- Bouton suppression et modification destination -->
