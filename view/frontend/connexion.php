@@ -11,7 +11,7 @@
                 <form action="index.php?action=connexionUser" method="post">
                     <div class="form-group">
                         <input type="text" id="pseudo" name="pseudo" required="">
-                        <label for="pseudo">NOM UTILISATEUR</label><br/>
+                        <label for="pseudo">PSEUDO</label><br/>
                         <div class="font-italic"><?php echo $errorPseudo ?? "";?></div>
                     </div>
                     <div class="form-group">
