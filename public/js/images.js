@@ -4,9 +4,12 @@ class Images {
         button.addEventListener("click", () => {
             this.addFile();
         });
+
+        this.deleteImageHome();
+        this.deleteImageSlider();
     }
     
-    // Ajouter champs 
+    // Ajouter champ image - Page addDestination + editDestination
     addFile() {
         let file = document.getElementById("file");
         let line = document.createElement("input");
@@ -17,7 +20,7 @@ class Images {
         icon.classList.add("fa-xmark");
         line.setAttribute("type","file",);
         line.setAttribute("name","image_slider[]");
-        // Supprimer input avec l'icon
+        // Supprimer champ avec l'icon
         icon.addEventListener("click", () => {
             div.remove();
         });
@@ -26,6 +29,23 @@ class Images {
         file.appendChild(div);
     }
 
+    // Suprimer image home - Page editDestination
+    deleteImageHome() {
+        document.getElementById("delete-img-home").addEventListener("click", () => {
+        document.getElementById("img-home").remove();
+        });
+    }
+
+    // Supprimer image slider - Page editDestination
+    deleteImageSlider() {
+        let icons = [...document.getElementsByClassName("delete-img-slider")];
+        icons.forEach(icon => {
+            icon.addEventListener("click", (e) => {
+                let numero = e.target.getAttribute("data-numero-image");
+                document.querySelector('div[data-numero-image="'+ numero +'"]').remove();
+            });
+        });
+    }
 }
 
 

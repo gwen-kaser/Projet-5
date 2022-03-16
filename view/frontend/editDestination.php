@@ -8,7 +8,7 @@
             <div class="col-12 col-md-6 py-5">
                 <h3 class="pb-5">MODIFIER UNE DESTINATION</h3>
                 
-                <form action="index.php?action=displayEditDestination&amp;id=<?= $destination['id']?>" method="post" enctype="multipart/form-data">
+                <form action="index.php?action=editDestination&amp;id=<?= $destination['id']?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="text" id="title" name="title" required="" value="<?= $destination['title'] ?>">
                         <label for="title">TITRE</label><br/>
@@ -32,10 +32,11 @@
 
                     <div class="form-group">
                         <label for="image_home">IMAGE D'ACCUEIL</label><br/>
-                        <img id="image-home" class="img-responsive w-25 py-2" src="uploads/<?= ($destination['image_slider']) ?>" alt="Hôtel insolite">
-                        <!-- icon pour supprimer l'image d'acceuil -->
-                        <i class="fa-solid fa-xmark mr-3" id="delete-image"></i>
-
+                        <div id="img-home">
+                            <img class="img-responsive w-25 py-2" src="uploads/<?= ($destination['image_slider']) ?>" alt="Hôtel insolite">
+                            <!-- icon pour supprimer l'image d'acceuil -->
+                            <i class="fa-solid fa-xmark mr-3" id="delete-img-home"></i>
+                        </div>
                         <input type="file" class="form-control" id="image_home" name="image_home">
                     </div>
  
@@ -43,9 +44,12 @@
                         <label for="image_slider">IMAGE DIAPORAMA</label><br/>
                         <!-- Boucle pour afficher les images-->
                         <?php foreach ($images as $index => $image):?>
-                            <img id="image-slider" class="img-responsive w-25 py-2" src="uploads/<?= ($image['image_slider']) ?>" alt="Hôtel insolite">
-                            <!-- icon pour supprimer les images du slider -->
-                            <i class="fa-solid fa-xmark mr-3" id="delete-image"></i>
+                            <!-- Attribut data pour supprimer chaque image + icon -->
+                            <div data-numero-image="<?= $index?>">
+                                <img class="img-slider img-responsive w-25 py-2" src="uploads/<?= ($image['image_slider']) ?>" alt="Hôtel insolite">
+                                <!-- icon pour supprimer les images du slider -->
+                                <i data-numero-image="<?= $index?>" class="delete-img-slider fa-solid fa-xmark mr-3"></i>
+                            </div>
                         <?php endforeach;?>
 
                         <div class="flex-input">
