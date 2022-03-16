@@ -1,11 +1,13 @@
 <?php
 
+namespace Gwen\P5\Model;
+
 class Manager
 {
     // Connexion bdd
     protected function dbConnect()
     {
-        $db = new PDO('mysql:host=localhost;dbname=p5;charset=utf8', 'root', 'root');
+        $db = new \PDO('mysql:host=localhost;dbname=p5;charset=utf8', 'root', 'root');
         
         return $db;
     }

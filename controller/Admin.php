@@ -7,9 +7,9 @@ class Admin {
     // Méthode pour afficher les destinations
     public function listDestinationsAdmin() 
     {
+        $destinationManager = new \Gwen\P5\Model\DestinationManager();
+        
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse accéder à la gestion des destinations
-            
-            $destinationManager = new DestinationManager(); 
         
             $destinations = $destinationManager->getDestinations();
 
@@ -29,9 +29,9 @@ class Admin {
     // Méthode pour ajouter une destination
     public function addDestination($userId, $title, $content, $image_slider, $image_home, $latitude, $longitude, $address, $price, $link)
     { 
+        $destinationManager = new \Gwen\P5\Model\DestinationManager();
+
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse ajouter une destination
-        
-            $destinationManager = new DestinationManager();
                     
             $id = $destinationManager->addDestination($userId, $title, $content, $latitude, $longitude, $address, $price, $link);
             
@@ -97,12 +97,11 @@ class Admin {
     // Méthode pour afficher la destination à modifier
     public function displayEditDestination()
     {
+        $destinationManager = new \Gwen\P5\Model\DestinationManager();
+
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse accéder à la page de la modifification d'une destination
-        
-            $destinationManager = new DestinationManager();
 
             $destination = $destinationManager->getDestination($_SESSION['id'], $_GET['id']);
-            
             $images = $destinationManager->getImages($_GET['id']);
 
             require('view/frontend/editDestination.php');
@@ -112,11 +111,11 @@ class Admin {
     // Méthode pour modifier la destination
     public function editDestination($id, $title, $content, $image_slider, $image_home, $latitude, $longitude, $address, $price, $link)
     {
-        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse modifier une destination
-        
-            $id = $destinationManager = new DestinationManager();
+        $destinationManager = new \Gwen\P5\Model\DestinationManager();
 
-            $destinationManager->editDestination($id, $title, $content, $latitude, $longitude, $address, $price, $link);
+        if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse modifier une destination
+
+            $id = $destinationManager->editDestination($id, $title, $content, $latitude, $longitude, $address, $price, $link);
             
             // Vérification de l'image d'accueil
             if (isset($_FILES['image_home']) && $_FILES['image_home']['error'] == 0) {
@@ -136,14 +135,14 @@ class Admin {
                         basename($_FILES['image_home']['name']));
                                     
                         // Enregistrement dans la bdd
-                        $destinationManager->editImage($_FILES['image_home']['name'], 1, $id);
+                        $destinationManager->addImage($_FILES['image_home']['name'], 1, $id);
                     }
                 }
             }
-
+                        
             // Boucle pour enregistrer plusieurs images / slider
             for($i=0; $i<count($_FILES['image_slider']['name']);$i++) {
-
+            
                 // Vérification de l'image du slider
                 if (isset($_FILES['image_slider']) && $_FILES['image_slider']['error'][$i] == 0) {
                                 
@@ -154,7 +153,7 @@ class Admin {
                         $fileInfo = pathinfo($_FILES['image_slider']['name'][$i]);
                         $extension = $fileInfo['extension'];
                         $allowedExtension = ['jpg', 'jpeg', 'gif', 'png'];
-                
+            
                         if (in_array($extension, $allowedExtension)) {
             
                             // Validation et stockage du fichier 
@@ -162,7 +161,7 @@ class Admin {
                             basename($_FILES['image_slider']['name'][$i]));
             
                             // Enregistrement dans la bdd 
-                            $destinationManager->editImage($_FILES['image_slider']['name'][$i], 0, $id);
+                            $destinationManager->addImage($_FILES['image_slider']['name'][$i], 0, $id);
                         }
                     }
                 }
@@ -180,9 +179,9 @@ class Admin {
     // Méthode pour supprimer une destination
     public function deleteDestination($id) 
     {
+        $destinationManager = new \Gwen\P5\Model\DestinationManager();
+
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse supprimer une destination
-            
-            $destinationManager = new DestinationManager();
 
             $delDestination = $destinationManager->deleteDestination($id);
             $delImage = $destinationManager->deleteImage($id);

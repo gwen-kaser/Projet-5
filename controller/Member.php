@@ -13,7 +13,7 @@ class Member
     // Méthode pour identifier le membre déjà inscrit 
     public function connexionUser($pseudo, $pass)
     {
-        $memberManager = new MemberManager();
+        $memberManager = new \Gwen\P5\Model\MemberManager();
         
         $resultat = $memberManager->connexionUser($pseudo, $pass);
         
@@ -46,7 +46,7 @@ class Member
     // Méthode pour enregistrer un membre
     public function saveUser($pseudo, $pass, $email)
     {
-        $memberManager = new MemberManager();
+        $memberManager = new \Gwen\P5\Model\MemberManager();
     
         $passHache = password_hash($pass, PASSWORD_DEFAULT);
             

@@ -7,7 +7,7 @@ class Website
     // Méthode pour afficher la listes des destinations / page d'accueil
     public function listDestinationsHome () 
     {
-        $destinationManager = new DestinationManager(); 
+        $destinationManager = new \Gwen\P5\Model\DestinationManager(); 
         
         $destinations = $destinationManager->getDestinations();
 
@@ -17,12 +17,12 @@ class Website
     // Méthode pour afficher une destination
     public function destination ()
     {
+        $destinationManager = new \Gwen\P5\Model\DestinationManager();
+
         if(!isset($_SESSION['id'])) { // Sécurité si ce n'est pas un membre redirection vers la page de connexion
             header('Location: index.php?action=connexion');
             die();
         }
-        
-        $destinationManager = new DestinationManager();
             
         $destination = $destinationManager->getDestination($_SESSION['id'], $_GET['id']);
         $images = $destinationManager->getImages($_GET['id']);
@@ -33,12 +33,12 @@ class Website
     // Méthode pour afficher les destinations favorites
     public function destinationsFavorites()
     {
+        $destinationManager = new \Gwen\P5\Model\DestinationManager();
+
         if(!isset($_SESSION['id'])) { // Sécurité si ce n'est pas un membre redirection vers la page de connexion
             header('Location: index.php?action=connexion');
             die();
         }
-
-        $destinationManager = new DestinationManager();
         
         $displayFavorites = $destinationManager->getDestinatonsFavorites($_SESSION['id']);
 
@@ -49,12 +49,12 @@ class Website
     // Méthode pour ajouter une destination favorite
     public function addFavorite($destinationId, $userId)
     {
+        $destinationManager = new \Gwen\P5\Model\DestinationManager();
+
         if(!isset($_SESSION['id'])) { // Sécurité si ce n'est pas un membre redirection vers la page de connexion
             header('Location: index.php?action=connexion');
             die();
         }
-        
-        $destinationManager = new DestinationManager();
         
         $destinationManager->addFavorite($destinationId, $userId);
 
@@ -64,14 +64,14 @@ class Website
     // Methode pour supprimer une destination favorite
     public function deleteFavorite($destinationId, $userId)
     {
+        $destinationManager = new \Gwen\P5\Model\DestinationManager();
+        
         if(!isset($_SESSION['id'])) { // Sécurité si ce n'est pas un membre redirection vers la page de connexion
             header('Location: index.php?action=connexion');
             die();
         }
 
         if (isset($_SESSION['id'])) { // Vérification si l'utilisateur est connecté
-
-            $destinationManager = new DestinationManager;
             
             $destinationManager->deleteFavorite($destinationId, $userId);
 

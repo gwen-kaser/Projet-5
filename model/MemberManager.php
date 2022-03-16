@@ -1,5 +1,7 @@
 <?php
 
+namespace Gwen\P5\Model;
+
 require_once("model/Manager.php");
 
 class MemberManager extends Manager 
