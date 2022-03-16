@@ -38,8 +38,10 @@
                 
                 <!-- Condition destination favorite / la couleur de l'incon change -->
                 <?php if ($destination['user_id']) { ?> 
+                    <!-- Suppression -->
                     <a href="index.php?action=deleteFavorite&amp;id=<?=$destination['id']?>"><i class="fa-solid fa-star fa-2x"></i></a>
                 <?php } else { ?> 
+                    <!-- Ajout -->
                     <a href="index.php?action=addFavorite&amp;id=<?=$destination['id']?>"><i class="fa-regular fa-star fa-2x"></i></a>
                 <?php } ?> 
             </div>
