@@ -32,10 +32,5 @@ class ValidationForm {
             missingPass2.style.color = "red"; 
         }
     }
-
-
-
-
-
 }
 
