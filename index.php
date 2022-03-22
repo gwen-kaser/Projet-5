@@ -2,9 +2,8 @@
 
 session_start();
 
-require('controller/Website.php');
-require('controller/Member.php');
-require('controller/Admin.php');
+require 'controller/Autoloader.php'; 
+Autoloader::register();
 
 try {
     // Page d'accueil / Liste des destinations
