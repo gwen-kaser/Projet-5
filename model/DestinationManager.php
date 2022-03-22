@@ -85,14 +85,6 @@ class DestinationManager extends Manager
         $destinations->execute([$title, $content, $latitude, $longitude, $address, $price, $link, $id]);
     }
 
-    // Requête pour modifier les images associés à la destination / gestion administrateur
-    public function editImage($image_slider, $image_home, $destination_id)
-    {
-        $db = $this->dbConnect();
-        $images = $db->prepare('UPDATE images SET image_slider = ?, image_home = ?, destination_id = ? WHERE id = ?');
-        $images->execute([$image_slider, $image_home, $destination_id]);
-    }
-
     // Requête pour supprimer une destination / gestion administrateur
     public function deleteDestination($id)
     {
