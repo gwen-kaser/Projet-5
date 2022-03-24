@@ -8,11 +8,11 @@
             <div class="col">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade text-center" data-ride="carousel">
                     <div class="carousel-inner">
-                        <?php foreach ($images as $index => $image):?>
+                        <?php foreach ($images as $index => $image): ?>
                             <div class="carousel-item <?= $index == 0 ? "active" : ""?>">
                                 <img class="img-responsive" src="uploads/<?= ($image['image_slider']) ?>" alt="Hôtel insolite"> 
                             </div>
-                        <?php endforeach;?>
+                        <?php endforeach; ?>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,13 +37,13 @@
                 <p>Lien du site : <?= htmlspecialchars($destination['link']) ?></p>
                 
                 <!-- Condition destination favorite / la couleur de l'incon change -->
-                <?php if ($destination['user_id']) { ?> 
+                <?php if ($destination['user_id']): ?> 
                     <!-- Suppression -->
                     <a href="index.php?action=deleteFavorite&amp;id=<?=$destination['id']?>"><i class="fa-solid fa-star fa-2x"></i></a>
-                <?php } else { ?> 
+                <?php else: ?> 
                     <!-- Ajout -->
                     <a href="index.php?action=addFavorite&amp;id=<?=$destination['id']?>"><i class="fa-regular fa-star fa-2x"></i></a>
-                <?php } ?> 
+                <?php endif; ?> 
             </div>
         </div>
     </div>

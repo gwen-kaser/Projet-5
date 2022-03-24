@@ -18,10 +18,7 @@
     </div>
 
     <!--Affichage des destinations-->
-    <?php
-    while ($data = $destinations->fetch())
-    {
-    ?>
+    <?php while ($data = $destinations->fetch()):?>
         <div class="container py-5">
             <div class="row mb-5 d-block mx-auto">
                 <div class="col text-center">
@@ -34,28 +31,27 @@
                     <p><?= htmlspecialchars($data['content']) ?></p>
                     <p>Tarif : <?= htmlspecialchars($data['price']) ?></p>
                     <p>Lien du site : <?= htmlspecialchars($data['link']) ?></p>
+                    
                     <!-- Condition destination favorite / la couleur de l'incon change -->
-                    <?php if ($data['numberFavorite']) { ?> 
+                    <?php if ($data['numberFavorite']): ?> 
                         <!-- Si c'est favoris -->
                         <i class="fa-solid fa-star text-primary"></i></a>
-                    <?php } else { ?> 
+                    <?php else: ?> 
                         <i class="fa-regular fa-star"></i></a>
-                    <?php } ?>
+                    <?php endif; ?>
                     <!-- Nombre de favoris -->
                     <?= ($data['numberFavorite']) ?></br>
                     <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fa-solid fa-arrow-right-long fa-2x mt-2"></i></a>
                 </div>
                 
-                <!-- Bouton suppression et modification destination -->
+                <!-- Suppression et modification destination -->
                 <div class="pt-2">
                     <a href= "index.php?action=displayEditDestination&amp;id=<?= $data['id']?>" class="font-italic">MODIFIER</a> |
                     <a href= "index.php?action=deleteDestination&amp;id=<?= $data['id']?>" class="font-italic">SUPPRIMER</a>
                 </div>
             </div>
         </div>
-    
-    <?php
-    }
+    <?php endwhile;
     $destinations->closeCursor();
     ?> 
 

@@ -25,28 +25,28 @@
         <a class="navbar-brand py-3" href="index.php">
             <img class="img-fluid w-25" src="public/images/logo.png" alt="Site logo">
         </a>
-    <!-- Toggler/collapsibe Button -->
+        <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-    <!-- Condition si un membre se connecte -->
+        <!-- Si un membre se connecte -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-                <?php if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])) {?>
+                <?php if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])): ?>
                 Bonjour <?=($_SESSION['pseudo']);?>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="index.php?action=deconnexion">SE DECONNECTER</a>
                     </li>
                 <!-- Si l'administrateur se connect -->    
-                <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == false) {?>
+                <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == false): ?>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="index.php?action=destinationsFavorites"> MES DESTINATIONS FAVORITES</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="index.php?action=contact">NOUS CONTACTER</a>
                     </li>
-                <?php }?>
-                <?php } else { ?>
+                <?php endif; ?>
+                <?php else: ?>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="index.php?action=registration">S'INSCRIRE</a> 
                     </li>
@@ -56,14 +56,13 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="index.php?action=contact">NOUS CONTACTER</a>
                     </li>
-                <?php }?>
-    <!-- Dropdown -->
-    <!-- Condition si l'administrateur se connect -->
-                <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {?>
+                <?php endif; ?>
+                 <!-- Condition si l'administrateur se connect -->
+                <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="index.php?action=listDestinationsAdmin">Gestion des destinations</a>
                     </li>
-                <?php }?>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>

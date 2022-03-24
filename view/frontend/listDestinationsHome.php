@@ -20,10 +20,7 @@
     </div>
 
     <!--Affichage des destinations-->
-    <?php
-    while ($data = $destinations->fetch())
-    {
-    ?>
+    <?php while ($data = $destinations->fetch()): ?>
         <div class="container py-5">
             <div class="row pb-5">
                 <div class="col-md-5 offset-md-1">
@@ -33,23 +30,22 @@
                     <div class="text-block">
                         <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
                         <?php 
-                            if(strlen($data['content']) > 200) { 
+                            if (strlen($data['content']) > 200) { 
                             $data['content'] = substr($data['content'], 0, 200).'...'; } 
                         ?>
                         <p><?= htmlspecialchars($data['content']) ?></p>
                         
                         <!-- Condition si le membre est connecté il peut accéder à la destination sinon redirection page connexion -->
-                        <?php if (isset($_SESSION['id'])) { ?>
+                        <?php if (isset($_SESSION['id'])): ?>
                             <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fa-solid fa-arrow-right-long fa-2x"></i></a>
-                        <?php } else { ?> 
+                        <?php else: ?> 
                             <a href="index.php?action=connexion"><i class="fa-solid fa-arrow-right-long fa-2x"></i></a>
-                        <?php } ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
         </div>
-    <?php
-    }
+    <?php endwhile;
     $destinations->closeCursor();
     ?>  
 

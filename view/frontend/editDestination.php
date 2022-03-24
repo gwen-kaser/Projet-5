@@ -43,15 +43,15 @@
                     <div class="form-group">
                         <label for="image_slider">IMAGE DIAPORAMA</label><br/>
                         <!-- Boucle pour afficher les images-->
-                        <?php foreach ($images as $index => $image):?>
+                        <?php foreach ($images as $image['id'] => $image): ?>
                             <!-- Attribut data pour supprimer chaque image + icon -->
-                            <div data-numero-image="<?= $index?>">
+                            <div data-numero-image="<?= $image['id']?>">
                                 <img class="img-slider img-responsive w-25 py-2" src="uploads/<?= ($image['image_slider']) ?>" alt="Hôtel insolite">
                                 <!-- icon pour supprimer les images du slider -->
-                                <i data-numero-image="<?= $index?>" class="delete-img-slider fa-solid fa-xmark mr-3"></i>
-                            </div>
-                        <?php endforeach;?>
-
+                                <i data-numero-image="<?= $image['id']?>" class="delete-img-slider fa-solid fa-xmark mr-3"></i>
+                            </div> 
+                        <?php endforeach; ?>
+                        <input type="hidden" id="delete-img">   
                         <div class="flex-input">
                             <input type="file" id="image_slider" name="image_slider[]">
                             <i class="fa-solid fa-plus-minus" id="add-file"></i>

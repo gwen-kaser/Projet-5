@@ -9,10 +9,7 @@
     </div> 
 
     <!--Affichage des destinations favorites-->
-    <?php
-    while ($data = $displayFavorites->fetch())
-    {
-    ?>
+    <?php while ($data = $displayFavorites->fetch()): ?>
         <div class="container py-5">
             <div class="row mb-5 d-block mx-auto">
                 <div class="col text-center">
@@ -27,7 +24,7 @@
             </div>
         </div>
     <?php
-    }
+    endwhile;
     $displayFavorites->closeCursor();
     ?> 
 
