@@ -24,7 +24,7 @@
         <div class="container py-5">
             <div class="row pb-5">
                 <div class="col-md-5 offset-md-1">
-                    <img class="img-fluid" src="uploads/<?= ($data['image_slider']) ?>" alt="Hôtel insolite">
+                    <img class="img-fluid rounded" src="uploads/<?= ($data['image_slider']) ?>" alt="Hôtel insolite">
                 </div>
                 <div class="col-md-5">
                     <div class="text-block">

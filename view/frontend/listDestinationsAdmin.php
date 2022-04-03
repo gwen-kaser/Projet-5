@@ -22,7 +22,7 @@
         <div class="container py-5">
             <div class="row mb-5 d-block mx-auto">
                 <div class="col text-center">
-                    <img class="img-fluid w-50" src="uploads/<?= ($data['image_slider']) ?>" alt="Hôtel insolite">
+                    <img class="img-fluid w-50 rounded" src="uploads/<?= ($data['image_slider']) ?>" alt="Hôtel insolite">
                 </div>
             </div>
             <div class="col">

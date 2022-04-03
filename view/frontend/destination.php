@@ -10,7 +10,7 @@
                     <div class="carousel-inner">
                         <?php foreach ($images as $index => $image): ?>
                             <div class="carousel-item <?= $index == 0 ? "active" : ""?>">
-                                <img class="img-responsive" src="uploads/<?= ($image['image_slider']) ?>" alt="Hôtel insolite"> 
+                                <img class="img-responsive rounded" src="uploads/<?= ($image['image_slider']) ?>" alt="Hôtel insolite"> 
                             </div>
                         <?php endforeach; ?>
                     </div>
