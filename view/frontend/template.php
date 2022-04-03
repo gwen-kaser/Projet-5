@@ -10,7 +10,6 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
         crossorigin="anonymous">
 
-        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         
         <link href="public/css/style.css" rel="stylesheet" />
@@ -21,9 +20,9 @@
     <body>
     
     <!--Navbar-->
-    <nav class="navbar navbar-dark bg-primary py-1">
+    <nav class="navbar navbar-expend-md navbar-dark bg-primary py-1">
         <a class="navbar-brand py-3" href="index.php">
-            <img class="img-fluid w-25" src="public/images/logo.png" alt="Site logo">
+            <img src="public/images/logo.png" width="130" alt="Site logo">
         </a>
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
