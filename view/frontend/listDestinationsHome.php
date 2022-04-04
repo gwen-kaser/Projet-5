@@ -26,7 +26,7 @@
                 <div class="col-md-5 offset-md-1">
                     <img class="img-fluid rounded" src="uploads/<?= ($data['image_slider']) ?>" alt="Hôtel insolite">
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5 pt-1">
                     <div class="text-block">
                         <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
                         <?php 
@@ -37,9 +37,9 @@
                         
                         <!-- Condition si le membre est connecté il peut accéder à la destination sinon redirection page connexion -->
                         <?php if (isset($_SESSION['id'])): ?>
-                            <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fa-solid fa-arrow-right-long fa-2x"></i></a>
+                            <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fa-solid fa-circle-chevron-right fa-2x"></i></a>
                         <?php else: ?> 
-                            <a href="index.php?action=connexion"><i class="fa-solid fa-arrow-right-long fa-2x"></i></a>
+                            <a href="index.php?action=connexion"><i class="fa-solid fa-circle-chevron-right fa-2x"></i></a>
                         <?php endif; ?>
                     </div>
                 </div>

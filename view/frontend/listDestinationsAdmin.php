@@ -41,7 +41,8 @@
                     <?php endif; ?>
                     <!-- Nombre de favoris -->
                     <?= ($data['numberFavorite']) ?></br>
-                    <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fa-solid fa-arrow-right-long fa-2x mt-2"></i></a>
+                    <!-- lien destination -->
+                    <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fa-solid fa-circle-chevron-right fa-2x mt-2"></i></a>
                 </div>
                 
                 <!-- Suppression et modification destination -->
