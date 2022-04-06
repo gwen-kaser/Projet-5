@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <input type="text" id="link" name="link" required="">
-                        <label for="link">LIEN</label><br/>
+                        <label for="link">LIEN DU SITE DE L'HÔTEL</label><br/>
                     </div>
                     <div class="form-group">
                         <label for="image_home">IMAGE D'ACCUEIL</label><br/>
