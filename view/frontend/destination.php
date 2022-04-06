@@ -33,8 +33,9 @@
             <div class="text-block">
                 <h4 class="font-weight-light"><?= htmlspecialchars($destination['title']) ?></h4>
                 <p><?= htmlspecialchars($destination['content']) ?></p>
-                <p>Tarif : <?= htmlspecialchars($destination['price']) ?></p>
-                <p>Lien du site : <?= htmlspecialchars($destination['link']) ?></p>
+                <p>Tarif à partir de : <?= htmlspecialchars($destination['price']) ?></p>
+                <p>Lien du site de l'hôtel : <?= htmlspecialchars($destination['link']) ?></p>
+                <a href="<?=($destination['link'])?>"></a>
                 
                 <!-- Condition destination favorite / la couleur de l'incon change -->
                 <?php if ($destination['user_id']): ?> 

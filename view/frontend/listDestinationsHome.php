@@ -6,10 +6,10 @@
     <div class="img mb-5" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;" alt="Paysage insolite;">
         <div class="logo text-center py-5">
             <img class="img-fluid mb-5" src="public/images/logo.png" alt="logo">
-        </div>
+        </div>  
     </div>  
 
-    <div class="container py-5 my-5">
+    <div class="container py-5 mb-5">
         <div class="jumbotron-fluid py-5 px-5 bg-light border border-primary border border-top-0 border border-end-0 shadow"> 
             <h2 class="font-weight-light font-italic">NUITS INSOLITES</h2>
             <p class="font-italic pt-2">

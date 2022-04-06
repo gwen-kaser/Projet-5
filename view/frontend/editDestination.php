@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <input type="text" id="link" name="link" required="" value="<?= $destination['link'] ?>">
-                        <label for="link">LIEN</label><br/>
+                        <label for="link">LIEN DU SITE DE L'HÔTEL</label><br/>
                     </div>
 
                     <div class="form-group">
@@ -43,7 +43,7 @@
                     <div class="form-group">
                         <label for="image_slider">IMAGE DIAPORAMA</label><br/>
                         <!-- Boucle pour afficher les images-->
-                        <?php foreach ($images as $image['id'] => $image): ?>
+                        <?php foreach ($images as $image): ?>
                             <!-- Attribut data pour supprimer chaque image + icon -->
                             <div data-numero-image="<?= $image['id']?>">
                                 <img class="img-slider img-responsive w-25 py-2" src="uploads/<?= ($image['image_slider']) ?>" alt="Hôtel insolite">
@@ -51,7 +51,7 @@
                                 <i data-numero-image="<?= $image['id']?>" class="delete-img-slider fa-solid fa-xmark mr-3"></i>
                             </div> 
                         <?php endforeach; ?>
-                        <input type="hidden" id="delete-img">   
+                        <input type="hidden" id="delete-img" name="delete-img">   
                         <div class="flex-input">
                             <input type="file" id="image_slider" name="image_slider[]">
                             <i class="fa-solid fa-plus-minus" id="add-file"></i>

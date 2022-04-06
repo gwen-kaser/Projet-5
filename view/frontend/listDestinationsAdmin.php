@@ -29,8 +29,8 @@
                 <div class="text-block">
                     <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
                     <p><?= htmlspecialchars($data['content']) ?></p>
-                    <p>Tarif : <?= htmlspecialchars($data['price']) ?></p>
-                    <p>Lien du site : <?= htmlspecialchars($data['link']) ?></p>
+                    <p>Tarif à partir de : <?= htmlspecialchars($data['price']) ?></p>
+                    <p>Lien du site de l'hôtel : <?= htmlspecialchars($data['link']) ?></p>
                     
                     <!-- Condition destination favorite / la couleur de l'incon change -->
                     <?php if ($data['numberFavorite']): ?> 
