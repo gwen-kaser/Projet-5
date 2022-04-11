@@ -21,7 +21,7 @@
     
     <!--Navbar-->
     <nav class="navbar navbar-expend-md navbar-dark bg-primary py-1">
-        <a class="navbar-brand py-3" href="index.php">
+        <a class="navbar-brand py-2" href="index.php">
             <img src="public/images/logo.png" width="130" alt="Site logo">
         </a>
         <!-- Toggler/collapsibe Button -->
@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <?php if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])): ?>
-                Bonjour <?=($_SESSION['pseudo']);?>
+                    <h6 class="text-white text-center">Bonjour <?=($_SESSION['pseudo']);?></h6>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="index.php?action=deconnexion">SE DECONNECTER</a>
                     </li>
