@@ -116,8 +116,6 @@ class Admin {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse modifier une destination
 
             $destinationManager->editDestination($id, $title, $content, $latitude, $longitude, $address, $price, $link);
-            // Suppression d'image
-            $delImage = $destinationManager->deleteImage($id);
             
             // L'ajout de l'image d'acceuil
             // Vérification de l'image d'accueil
@@ -144,7 +142,7 @@ class Admin {
             }
             // L'ajout des images du slider
             // Boucle pour enregistrer plusieurs images / slider
-            for($i=0; $i<count($_FILES['image_slider']['name']);$i++) {
+            for ($i=0; $i<count($_FILES['image_slider']['name']);$i++) {
         
                 // Vérification de l'image du slider
                 if (isset($_FILES['image_slider']) && $_FILES['image_slider']['error'][$i] == 0) {
@@ -169,7 +167,13 @@ class Admin {
                     }
                 }
             }
-        
+            
+            // Suppression de plusieurs images
+            $tableauImages = explode(';', substr($_POST['delete-img'],1));
+            foreach ($tableauImages as $deleteImg) { 
+                $delImage = $destinationManager->deleteImages($deleteImg);
+            }
+            
             if ($id === false) {
                 throw new Exeption('Impossible d\'ajouter la destination !');
             }
@@ -187,7 +191,7 @@ class Admin {
         if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) { // Sécurité pour que uniquement l'admin puisse supprimer une destination
 
             $delDestination = $destinationManager->deleteDestination($id);
-            $delImage = $destinationManager->deleteImage($id);
+            $delImage = $destinationManager->deleteImgDestination($id);
 
             header('Location: index.php?action=listDestinationsAdmin');
         }

@@ -20,7 +20,7 @@ class DestinationManager extends Manager
         LEFT JOIN favorites 
         ON favorites.destination_id = destinations.id 
         GROUP BY destinations.id, images.image_slider
-        ORDER BY destinations.created_date DESC');
+        ORDER BY created_date DESC');
             
         return $req;
     }
@@ -49,7 +49,7 @@ class DestinationManager extends Manager
     public function getImages($destination_id)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT image_slider, image_home, destination_id FROM images WHERE image_home = 0 AND destination_id = ?');
+        $req = $db->prepare('SELECT id, image_slider, image_home, destination_id FROM images WHERE image_home = 0 AND destination_id = ?');
             
         $req->execute([$destination_id]);
         $images = $req->fetchAll();
@@ -61,7 +61,7 @@ class DestinationManager extends Manager
     public function addDestination($userId, $title, $content, $latitude, $longitude, $address, $price, $link)
     {
         $db = $this->dbConnect();
-        $destinations = $db->prepare('INSERT INTO destinations(title, user_id, content, latitude, longitude, address, price, link) VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
+        $destinations = $db->prepare('INSERT INTO destinations(title, user_id, content, created_date, latitude, longitude, address, price, link) VALUES(?, ?, ?, now(), ?, ?, ?, ?, ?)');
         $destinations->execute([$title, $userId, $content, $latitude, $longitude, $address, $price, $link]);
         
         return $db->lastInsertId();
@@ -85,6 +85,16 @@ class DestinationManager extends Manager
         $destinations->execute([$title, $content, $latitude, $longitude, $address, $price, $link, $id]);
     }
 
+    // Requête pour supprimer les images de la page modification de destination / gestion administrateur
+    public function deleteImages($id) 
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('DELETE FROM images WHERE id = ?');
+        $delImage = $req->execute([$id]);
+    
+        return $delImage;
+    }
+
     // Requête pour supprimer une destination / gestion administrateur
     public function deleteDestination($id)
     {
@@ -95,16 +105,16 @@ class DestinationManager extends Manager
         return $delDestination;
     }
 
-    // Requête pour supprimer les images associés à la destination
-    public function deleteImage($id) 
+    // Requête pour supprimer les images associés à la destination / gestion administrateur
+    public function deleteImgDestination($id) 
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('DELETE FROM images WHERE id = ?');
+        $req = $db->prepare('DELETE FROM images WHERE destination_id = ?');
         $delImage = $req->execute([$id]);
 
         return $delImage;
     }
-
+    
     // Requête avec jointure interne pour afficher les destinations favorites de chaque utilisateur
     public function getDestinatonsFavorites($userId)
     {
@@ -122,7 +132,7 @@ class DestinationManager extends Manager
         return $req;
     }
 
-    // Requête pour ajouter une destinaton favorite
+    // Requête pour ajouter une destinaton en favori
     public function addFavorite($destinationId, $userId) 
     {
         $db = $this->dbConnect();
@@ -130,7 +140,7 @@ class DestinationManager extends Manager
         $favorites->execute([$destinationId, $userId]);
     }
 
-    // Requête pour supprimer la destination favorites
+    // Requête pour supprimer une destination en favori
     public function deleteFavorite($destinationId, $userId)
     {
         $db = $this->dbConnect();

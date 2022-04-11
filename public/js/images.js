@@ -43,6 +43,7 @@ class Images {
             icon.addEventListener("click", (e) => {
                 let numero = e.target.getAttribute("data-numero-image");
                 document.querySelector('div[data-numero-image="'+ numero +'"]').remove();
+                document.getElementById("delete-img").value = document.getElementById("delete-img").value + ';' + numero;
             });
         });
     }
