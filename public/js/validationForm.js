@@ -3,8 +3,11 @@ class ValidationForm {
         let formValid = document.getElementById("button_confirm");
         formValid.addEventListener("click", (event) => {
             event.preventDefault();
-            this.validationEmail();
-            this.validationPass2();
+            let emailValid = this.validationEmail();
+            let passValid = this.validationPass2();
+            if (emailValid && passValid) {
+                document.getElementById("form").submit();
+            }
         });
     }
 
@@ -16,11 +19,14 @@ class ValidationForm {
         if (email.validity.valueMissing) {
             missingEmail.textContent = "Entrez votre adresse email";
             missingEmail.style.color = "red";
+            return false;
         // Si le format de données est incorrect
         } else if (emailValid.test(email.value) == false) {
             missingEmail.textContent = "Format incorrect";
             missingEmail.style.color = "red";
+            return false;
         }
+        return true;
     }
 
     validationPass2() {
@@ -30,7 +36,9 @@ class ValidationForm {
         if (pass2.validity.valueMissing) {
             missingPass2.textContent = "Confirmez votre mot de passe";
             missingPass2.style.color = "red"; 
+            return false;
         }
+        return true;
     }
 }
 

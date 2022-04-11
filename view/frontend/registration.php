@@ -9,7 +9,7 @@
             <div class="col-12 col-md-6 col-lg-4 py-5">
                 <h3 class="pb-4 font-weight-light">INSCRIPTION</h3>
                 
-                <form action="index.php?action=saveUser" method="post">
+                <form action="index.php?action=saveUser" method="post" id="form">
                     <div class="form-group">
                         <input type="text" id="pseudo" name="pseudo" required="">
                         <label for="pseudo">PSEUDO</label><br/>
@@ -30,7 +30,7 @@
                         <span id="missing_email"></span>
                         <div class="font-italic"><?php echo $errorEmail ?? "";?></div>
                     </div>
-                    <button type="submit" class="border border-primary btn-sm" id="button_confirm">CONFIRMER</button>
+                    <button type="submit" class="border border-primary btn-sm" id="button_confirm" >CONFIRMER</button>
                 </form>
             </div>
         </div>
