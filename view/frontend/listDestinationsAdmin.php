@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-    <div class="img" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;" alt="Paysage insolite;">
+    <div class="img" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;">
         <div class="logo text-center">
             <img class="img-fluid" src="public/images/logo.png" alt="logo">
         </div>
@@ -35,12 +35,12 @@
                     <!-- Condition destination favorite / la couleur de l'incon change -->
                     <?php if ($data['numberFavorite']): ?> 
                         <!-- Si c'est favoris -->
-                        <i class="fa-solid fa-star text-primary"></i></a>
+                        <i class="fa-solid fa-star text-primary"></i>
                     <?php else: ?> 
-                        <i class="fa-regular fa-star"></i></a>
+                        <i class="fa-regular fa-star"></i>
                     <?php endif; ?>
                     <!-- Nombre de favoris -->
-                    <?= ($data['numberFavorite']) ?></br>
+                    <?= ($data['numberFavorite']) ?><br>
                     <!-- lien destination -->
                     <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fa-solid fa-circle-chevron-right fa-2x mt-2"></i></a>
                 </div>

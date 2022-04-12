@@ -37,7 +37,7 @@
                         <label for="image_slider">IMAGE DIAPORAMA</label><br/>
                         <div class="flex-input">
                             <input type="file" id="image_slider" name="image_slider[]">
-                            <i class="fa-solid fa-plus-minus"id="add-file"></i>
+                            <i class="fa-solid fa-plus-minus" id="add-file"></i>
                         </div>
                         <div id="file"></div>
                     </div>

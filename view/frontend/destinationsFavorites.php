@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-    <div class="img mb-5" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;" alt="Paysage insolite;">
+    <div class="img mb-5" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;">
         <div class="logo text-center">
             <img class="img-fluid" src="public/images/logo.png" alt="logo">
         </div>

@@ -12,21 +12,21 @@
                 <form action="index.php?action=saveUser" method="post" id="form">
                     <div class="form-group">
                         <input type="text" id="pseudo" name="pseudo" required="">
-                        <label for="pseudo">PSEUDO</label><br/>
+                        <label for="pseudo">PSEUDO</label><br>
                     </div>
                     <div class="form-group">
                         <input type="password" id="pass" name="pass" required="">
-                        <label for="pass">MOT DE PASSE</label><br/>
+                        <label for="pass">MOT DE PASSE</label><br>
                         <div class="font-italic"><?php echo $errorPassword ?? "";?></div>
                     </div>
                     <div class="form-group">
                         <input type="password" id="pass2" name="pass2" required="">
-                        <label for="pass2">CONFIRMATION DU MOT DE PASSE</label><br/>
+                        <label for="pass2">CONFIRMATION DU MOT DE PASSE</label><br>
                         <span id="missing_pass2"></span>
                     </div>
                     <div class="form-group">
                         <input type="text" id="email" name="email" required="">
-                        <label for="email">EMAIL</label><br/>
+                        <label for="email">EMAIL</label><br>
                         <span id="missing_email"></span>
                         <div class="font-italic"><?php echo $errorEmail ?? "";?></div>
                     </div>
