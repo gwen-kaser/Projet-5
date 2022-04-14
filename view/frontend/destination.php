@@ -3,10 +3,10 @@
 <?php ob_start(); ?>
 
     <!-- Diaporama -->
-    <div class="container mb-5">
+    <div class="container mb-5 text-center">
         <div class="row bg-light border border-0">
             <div class="col">
-                <div id="carouselExampleFade" class="carousel slide carousel-fade text-center" data-ride="carousel">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <?php foreach ($images as $index => $image): ?>
                             <div class="carousel-item <?= $index == 0 ? "active" : ""?>">
@@ -14,11 +14,11 @@
                             </div>
                         <?php endforeach; ?>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
