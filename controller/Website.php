@@ -78,17 +78,4 @@ class Website
             header('location: index.php?action=destination&id='. $destinationId);
         }
     }
-
-    // Méthode pour afficher page contact
-    public function contact()
-    {
-        if(!isset($_SESSION['id'])) { // Sécurité si ce n'est pas un membre redirection vers la page de connexion
-            
-            header('Location: index.php?action=connexion');
-            
-            die();
-        }
-        
-        require('view/frontend/contact.php');
-    }
 }

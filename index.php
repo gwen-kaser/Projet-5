@@ -48,12 +48,6 @@ try {
             }   
         }
 
-        // Page contact
-        elseif ($_GET['action'] == 'contact') {
-            $website = new Website();
-            $website->contact();
-        }
-
         //Espace admin
         // Gestion des destinations
         if ($_GET['action'] == 'listDestinationsAdmin') {
@@ -103,7 +97,7 @@ try {
             $admin->deleteDestination($_GET['id']);
         }
         
-        // Espace membres
+        // Espace membre
         // Connexion
         if ($_GET['action'] == 'connexion') {
             $member = new Member();
