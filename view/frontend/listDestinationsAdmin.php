@@ -4,8 +4,8 @@
 
     <div class="img" style="background: url(public/images/home.jpg) no-repeat center center fixed; background-size: cover; height: 100vh;">
         <div class="logo text-center">
-            <img class="img-fluid" src="public/images/logo.png" alt="logo">
-        </div>
+            <img class="img-fluid mb-5" src="public/images/logo.png" alt="logo">
+        </div>  
     </div> 
 
     <div class="container py-5 my-5">

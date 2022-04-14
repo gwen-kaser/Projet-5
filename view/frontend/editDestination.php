@@ -29,7 +29,6 @@
                         <input type="text" id="link" name="link" required="" value="<?= $destination['link'] ?>">
                         <label for="link">LIEN DU SITE DE L'HÔTEL</label><br/>
                     </div>
-
                     <div class="form-group">
                         <label for="image_home">IMAGE D'ACCUEIL</label><br/>
                         <div id="img-home">
@@ -39,31 +38,30 @@
                         </div>
                         <input type="file" class="form-control" id="image_home" name="image_home">
                     </div>
- 
                     <div class="form-group">
                         <label for="image_slider">IMAGE DIAPORAMA</label><br/>
                         <!-- Boucle pour afficher les images-->
                         <?php foreach ($images as $image): ?>
-                            <!-- Attribut data pour supprimer chaque image + icon -->
-                            <div data-numero-image="<?= $image['id']?>">
-                                <img class="img-slider img-responsive w-25 py-2" src="uploads/<?= ($image['image_slider']) ?>" alt="Hôtel insolite">
-                                <!-- icon pour supprimer les images du slider -->
-                                <i data-numero-image="<?= $image['id']?>" class="delete-img-slider fa-solid fa-xmark mr-3"></i>
-                            </div> 
+                        <!-- Attribut data pour supprimer chaque image + icon -->
+                        <div data-numero-image="<?= $image['id']?>">
+                            <img class="img-slider img-responsive w-25 py-2" src="uploads/<?= ($image['image_slider']) ?>" alt="Hôtel insolite">
+                            <!-- icon pour supprimer les images du slider -->
+                            <i data-numero-image="<?= $image['id']?>" class="delete-img-slider fa-solid fa-xmark mr-3"></i>
+                        </div> 
                         <?php endforeach; ?>
+                        <!-- champ pour suppression des images côté serveur -->
                         <input type="hidden" id="delete-img" name="delete-img">   
                         <div class="flex-input">
                             <input type="file" id="image_slider" name="image_slider[]">
+                            <!-- icon pour ajouter les images du slider -->
                             <i class="fa-solid fa-plus-minus" id="add-file"></i>
                         </div>
                         <div id="file"></div>
-                    </div>
-                    
+                    </div>   
                     <div class="form-group">
                         <input type="text" id="latitude" name="latitude" required="" value="<?= $destination['latitude'] ?>">
                         <label for="latitude">LATITUDE</label><br/>
-                    </div>
-                    
+                    </div>   
                     <div class="form-group">
                         <input type="text" id="longitude" name="longitude" required="" value="<?= $destination['longitude'] ?>">
                         <label for="longitude">LONGITUDE</label><br/>
