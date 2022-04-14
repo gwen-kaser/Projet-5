@@ -30,7 +30,6 @@
                     <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
                     <p><?= htmlspecialchars($data['content']) ?></p>
                     <p>Tarif à partir de : <?= htmlspecialchars($data['price']) ?></p>
-                    <p>Lien du site de l'hôtel : <?= htmlspecialchars($data['link']) ?></p>
                     
                     <!-- Condition destination favorite / la couleur de l'incon change -->
                     <?php if ($data['numberFavorite']): ?> 
@@ -39,9 +38,12 @@
                     <?php else: ?> 
                         <i class="fa-regular fa-star"></i>
                     <?php endif; ?>
+                    
                     <!-- Nombre de favoris -->
-                    <?= ($data['numberFavorite']) ?><br>
-                    <!-- lien destination -->
+                    <?= ($data['numberFavorite']) ?>
+                    <!-- lien site hôtel -->
+                    <a class="font-italic" href="<?= htmlspecialchars($data['link']) ?>">DECOUVREZ LE SITE DE L'HÔTEL</a><br>
+                    <!-- icon accès destination -->
                     <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fa-solid fa-circle-chevron-right fa-2x mt-2"></i></a>
                 </div>
                 

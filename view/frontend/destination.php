@@ -34,9 +34,7 @@
                 <h4 class="font-weight-light"><?= htmlspecialchars($destination['title']) ?></h4>
                 <p><?= htmlspecialchars($destination['content']) ?></p>
                 <p>Tarif à partir de : <?= htmlspecialchars($destination['price']) ?></p>
-                <p>Lien du site de l'hôtel : <?= htmlspecialchars($destination['link']) ?></p>
-                <a href="<?=($destination['link'])?>"></a>
-                
+                  
                 <!-- Condition destination favorite / la couleur de l'incon change -->
                 <?php if ($destination['user_id']): ?> 
                     <!-- Suppression -->
@@ -44,7 +42,9 @@
                 <?php else: ?> 
                     <!-- Ajout -->
                     <a href="index.php?action=addFavorite&amp;id=<?=$destination['id']?>"><i class="fa-regular fa-star fa-2x"></i></a>
-                <?php endif; ?> 
+                <?php endif; ?>
+                <!-- lien site hôtel -->
+                <a class="font-italic" href="<?= htmlspecialchars($destination['link']) ?>">DECOUVREZ LE SITE DE L'HÔTEL</a>
             </div>
         </div>
     </div>
