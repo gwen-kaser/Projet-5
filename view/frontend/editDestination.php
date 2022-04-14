@@ -14,12 +14,12 @@
                         <label for="title">TITRE</label><br/>
                     </div>
                     <div class="form-group">
-                        <label for="content">TEXTE</label><br/>
-                        <textarea type="text" id="content" name="content"><?= $destination['content'] ?></textarea>
+                        <label for="content">DESCRIPTION</label><br/>
+                        <textarea id="content" name="content"><?= $destination['content'] ?></textarea>
                     </div>
                     <div class="form-group">
                         <label for="address">ADRESSE</label><br/>
-                        <textarea type="text" id="address" name="address"><?= $destination['address'] ?></textarea>
+                        <textarea id="address" name="address"><?= $destination['address'] ?></textarea>
                     </div>
                     <div class="form-group">
                         <input type="text" id="price" name="price" required="" value="<?= $destination['price'] ?>">

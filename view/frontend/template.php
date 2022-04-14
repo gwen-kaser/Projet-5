@@ -35,7 +35,7 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <?php if (isset($_SESSION['id']) && isset($_SESSION['pseudo'])): ?>
-                        <h6 class="text-white font-italic pt-4">Bonjour <?=($_SESSION['pseudo']);?></h6>
+                        <li class="text-white font-italic mt-3 mb-2">Bonjour <?=($_SESSION['pseudo']);?></li>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="index.php?action=deconnexion">SE DECONNECTER</a>
                         </li>
@@ -44,9 +44,6 @@
                         <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == false): ?>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="index.php?action=destinationsFavorites"> MES DESTINATIONS FAVORITES</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="index.php?action=contact">NOUS CONTACTER</a>
                         </li>
                         <?php endif; ?>
                         <?php else: ?>
@@ -62,9 +59,6 @@
                         <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="index.php?action=listDestinationsAdmin">GESTION DES DESTINATIONS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="index.php?action=contact">NOUS CONTACTER</a>
                         </li>
                         <?php endif; ?>
                     </ul>

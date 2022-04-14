@@ -25,6 +25,7 @@
             <div class="col">
                 <div class="text-block">
                     <h4 class="font-weight-light"><?= htmlspecialchars($data['title']) ?></h4>
+                    <!-- icon accès destination -->
                     <a href="index.php?action=destination&amp;id=<?= $data['id'] ?>"><i class="fa-solid fa-circle-chevron-right fa-2x"></i></a>
                 </div>  
             </div>
