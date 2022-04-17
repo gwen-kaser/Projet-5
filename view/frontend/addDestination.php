@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group">
                         <label for="image_home">IMAGE D'ACCUEIL</label><br/>
-                        <input type="file" class="form-control" id="image_home" name="image_home">
+                        <input type="file" id="image_home" name="image_home">
                     </div>
                     <div class="form-group">
                         <label for="image_slider">IMAGE DIAPORAMA</label><br/>
