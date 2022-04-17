@@ -13,8 +13,9 @@
         <div class="jumbotron-fluid py-5 px-5 bg-light border border-primary border border-top-0 border border-end-0 shadow"> 
             <h2 class="font-weight-light font-italic">NUITS INSOLITES</h2>
             <p class="font-italic pt-2">
-                Vous propose plusieurs destinations avec des séjours INSOLITES que vous n'êtes pas prêt d'oublier !<br>
-                Pour les découvrir, connectez-vous ou inscrivez-vous pour tout savoir sur ces hôtels qui vous feront rêver !
+                Vous propose plusieurs destinations avec des hôtels atypiques qui vous feront rêver !<br>
+                Des séjours INSOLITES que vous n'êtes pas prêts d'oublier !<br>
+                Découvrez-les en vous connectant et rajoutez-les dans vos destinations favorites !     
             </p> 
         </div>
     </div>
