@@ -1,9 +1,7 @@
 <?php
-
 require_once('model/DestinationManager.php');
-
-class Admin {
-
+class Admin 
+{
     // Méthode pour afficher les destinations
     public function listDestinationsAdmin() 
     {
@@ -167,8 +165,7 @@ class Admin {
                     }
                 }
             }
-            
-            // Suppression de plusieurs images
+            // Suppression image
             $tableauImages = explode(';', substr($_POST['delete-img'],1));
             foreach ($tableauImages as $deleteImg) { 
                 $delImage = $destinationManager->deleteImages($deleteImg);

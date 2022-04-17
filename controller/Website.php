@@ -1,7 +1,5 @@
 <?php
-
 require_once('model/DestinationManager.php');
-
 class Website 
 {
     // Méthode pour afficher la listes des destinations / page d'accueil

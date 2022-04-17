@@ -1,7 +1,5 @@
 <?php
-
 require_once('model/MemberManager.php');
-
 class Member 
 {
     // Afficher page de connexion
