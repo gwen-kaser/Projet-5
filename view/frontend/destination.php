@@ -49,7 +49,7 @@
         </div>
     </div>
     
-    <!-- Map -->
+    <!-- Map + affichage marker -->
     <div id="map"></div>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -60,7 +60,7 @@
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-
+        
         var marker = L.marker([<?= ($destination['latitude'].','. $destination['longitude']); ?>])
             .addTo(map)
             .bindPopup('<?= ($destination['address']) ?>')

@@ -2,7 +2,7 @@
 
 namespace Gwen\P5\Model;
 
-require_once("model/Manager.php");
+require_once("model/Manager.php"); // Appel du fichier connexion bdd
 
 class MemberManager extends Manager 
 {

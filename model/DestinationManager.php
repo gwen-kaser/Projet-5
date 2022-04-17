@@ -2,12 +2,11 @@
 
 namespace Gwen\P5\Model;
 
-require_once("model/Manager.php");
+require_once("model/Manager.php"); // Appel du fichier connexion bdd
 
 class DestinationManager extends Manager 
 {
- 
-    // Requête avec jointure externe pour afficher les destinations + image d'accueil + nombre favoris gestion administrateur
+    // Requête pour afficher les destinations + jointure interne images + jointure externe nombre favoris gestion administrateur
     public function getDestinations()
     {
         $db = $this->dbConnect();
@@ -25,7 +24,7 @@ class DestinationManager extends Manager
         return $req;
     }
 
-    // Requête avec jointure externe pour afficher une destination + enregistrer favoris par utilisateur + afficher la destination et l'image d'accueil à modifier
+    // Requête pour afficher une destination jointure interne images + jointure externe enregistrer favoris (icon) par utilisateur + afficher la destination et l'image d'accueil à modifier
     public function getDestination($userId, $destinationId)
     {
         $db = $this->dbConnect();
