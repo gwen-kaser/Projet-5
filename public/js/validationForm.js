@@ -18,12 +18,10 @@ class ValidationForm {
         // Si le champ est vide
         if (email.validity.valueMissing) {
             missingEmail.textContent = "Entrez votre adresse email";
-            missingEmail.style.color = "red";
             return false;
         // Si le format de données est incorrect
         } else if (emailValid.test(email.value) == false) {
             missingEmail.textContent = "Format incorrect";
-            missingEmail.style.color = "red";
             return false;
         }
         return true;
