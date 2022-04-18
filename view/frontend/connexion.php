@@ -12,11 +12,13 @@
                     <div class="form-group">
                         <input type="text" id="pseudo" name="pseudo" required="">
                         <label for="pseudo">PSEUDO</label><br/>
+                        <!-- Affiche erreur côté serveur -->
                         <div class="font-italic"><?php echo $errorPseudo ?? "";?></div>
                     </div>
                     <div class="form-group">
                         <input type="password" id="pass" name="pass" required="">
                         <label for="pass">MOT DE PASSE</label><br/>
+                        <!-- Affiche erreur côté serveur -->
                         <div class="font-italic"><?php echo $errorPassword ?? "";?></div>
                     </div>
                     <button type="submit" class="border border-primary btn-sm">CONNEXION</button><br/><br/>
