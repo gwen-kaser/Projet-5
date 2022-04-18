@@ -1,7 +1,7 @@
 <?php
 
-class Autoloader{
-
+class Autoloader 
+{
     // Enregistre notre autoloader
     static function register() {
         spl_autoload_register(array(__CLASS__, 'autoload'));

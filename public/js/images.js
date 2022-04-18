@@ -16,7 +16,8 @@ class Images {
         let div = document.createElement("div");
         let icon = document.createElement("i");
         div.className = "flex-input";
-        icon.classList.add("fa-solid");
+        // Ajouter icon suppression
+        icon.classList.add("fa-solid"); 
         icon.classList.add("fa-xmark");
         line.setAttribute("type","file",);
         line.setAttribute("name","image_slider[]");
@@ -29,14 +30,14 @@ class Images {
         file.appendChild(div);
     }
 
-    // Suprimer image home - Page editDestination
+    // Suprimer image home
     deleteImageHome() {
         document.getElementById("delete-img-home").addEventListener("click", () => {
         document.getElementById("img-home").remove();
         });
     }
 
-    // Supprimer image slider - Page editDestination
+    // Supprimer image slider 
     deleteImageSlider() {
         let icons = [...document.getElementsByClassName("delete-img-slider")];
         icons.forEach(icon => {

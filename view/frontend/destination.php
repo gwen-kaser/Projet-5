@@ -8,6 +8,7 @@
             <div class="col">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
+                        <!-- Boucle afficher les images -->
                         <?php foreach ($images as $index => $image): ?>
                             <div class="carousel-item <?= $index == 0 ? "active" : ""?>">
                                 <img class="img-responsive rounded" src="uploads/<?= ($image['image_slider']) ?>" alt="Hôtel insolite"> 

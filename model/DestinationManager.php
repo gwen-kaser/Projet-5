@@ -6,7 +6,7 @@ require_once("model/Manager.php"); // Appel du fichier connexion bdd
 
 class DestinationManager extends Manager 
 {
-    // Requête pour afficher les destinations + jointure interne images + jointure externe nombre favoris gestion administrateur
+    // Requête pour afficher les destinations + jointure interne image d'accueil + jointure externe nombre favoris gestion administrateur
     public function getDestinations()
     {
         $db = $this->dbConnect();
@@ -24,7 +24,7 @@ class DestinationManager extends Manager
         return $req;
     }
 
-    // Requête pour afficher une destination jointure interne images + jointure externe enregistrer favoris (icon) par utilisateur + afficher la destination et l'image d'accueil à modifier
+    // Requête pour afficher une destination jointure interne image d'accueil + jointure externe enregistrer favori (icon) par utilisateur + afficher la destination et l'image d'accueil à modifier
     public function getDestination($userId, $destinationId)
     {
         $db = $this->dbConnect();
@@ -66,7 +66,7 @@ class DestinationManager extends Manager
         return $db->lastInsertId();
     }
     
-    // Requête pour ajouter les images / gestion administrateur
+    // Requête pour ajouter les images associés à la destination / gestion administrateur
     public function addImage($image_slider, $image_home, $destination_id)
     {
         $db = $this->dbConnect();
@@ -114,7 +114,7 @@ class DestinationManager extends Manager
         return $delImage;
     }
     
-    // Requête avec jointure interne pour afficher les destinations favorites de chaque utilisateur
+    // Requête pour afficher les destinations favorites de chaque utilisateur avec jointure interne  + image d'accueil
     public function getDestinatonsFavorites($userId)
     {
         $db = $this->dbConnect();
