@@ -45,7 +45,7 @@
                     <a href="index.php?action=addFavorite&amp;id=<?=$destination['id']?>"><i class="fa-regular fa-star fa-2x"></i></a>
                 <?php endif; ?>
                 <!-- lien site hôtel -->
-                <a class="font-italic" href="<?= htmlspecialchars($destination['link']) ?>">DECOUVREZ LE SITE DE L'HÔTEL</a>
+                <a target="_blank" class="font-italic" href="<?= htmlspecialchars($destination['link']) ?>">DECOUVREZ LE SITE DE L'HÔTEL</a>
             </div>
         </div>
     </div>
