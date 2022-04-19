@@ -1,5 +1,6 @@
 <?php
 require_once('model/DestinationManager.php');
+
 class Admin 
 {
     // Méthode pour afficher les destinations
